@@ -46,3 +46,8 @@ INSERT INTO question_has_alternative VALUES (3, 8);
 INSERT INTO user_answers_alternative VALUES ('bob@student.com', 3);
 INSERT INTO user_answers_alternative VALUES ('bob@student.com', 6);
 INSERT INTO user_answers_alternative VALUES ('bob@student.com', 7);
+
+/* Grades */
+
+INSERT INTO grade (user_userId, grade) VALUES ('bob@student.com', 'g');
+INSERT INTO grade (user_userId, grade) VALUES ('jane@student.com', 'vg');
