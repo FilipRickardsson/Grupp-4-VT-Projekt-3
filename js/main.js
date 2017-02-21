@@ -1,1 +1,1 @@
-new Test();
+new App();
