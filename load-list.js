@@ -25,11 +25,13 @@ window.load = `
     bootstrap-size.js
 	 question-list.class.js
 	 question.class.js
+	 alternative-list.class.js
     app.class.js
 
   templates/
     bootstrap-size.html
 	 question.html
+	 alternative.html
 
   js/main.js
 

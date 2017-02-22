@@ -18,8 +18,6 @@ class App {
 		*/
 
 		var questionList = new QuestionList();
-		window.questionList = questionList;
-
 
 		questionList.readAllFromDb(() => {
 			console.log("Read from DB", questionList);
@@ -28,5 +26,16 @@ class App {
 		
 		console.log('debug 1');
 
+
+		//var alternativeList = new AlternativeList();
+/*
+	 	alternativeList.readAllAlternatives(() => {
+			console.log("Read from DB", alternativeList);
+			alternativeList.display('body');
+		});
+	*/	
+		console.log('debug 2');
+		
+		
 	}
 }
