@@ -5,7 +5,7 @@ class App {
     var header = new Header();
     header.display('body');
     var content = new Content();
-      content.display('body');
+    content.display('body');
     var footer = new Footer();
     footer.display('body');
     
