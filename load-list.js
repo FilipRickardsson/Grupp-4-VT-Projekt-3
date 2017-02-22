@@ -25,11 +25,13 @@ window.load = `
     bootstrap-size.js
     app.class.js
     header.class.js
+    content.class.js
     footer.class.js
 
   templates/
     bootstrap-size.html
     header.html
+    content.html
     footer.html
 
   js/main.js
