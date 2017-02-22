@@ -4,8 +4,8 @@ class QuestionList extends List {
 		super(Question, items);
 	}
 
-	readAllFromDb(callback) {
-		this.db.readAll((data) => {
+	readAllQuestions(callback) {
+		this.db.readAllQuestions((data) => {
 			this.push.apply(this, data);
 			console.log(data);
 			callback();
@@ -14,7 +14,7 @@ class QuestionList extends List {
 
 	static get sqlQueries() {
 		return {
-			readAll: `
+			readAllQuestions: `
         SELECT questionId, text FROM question
       `
 		}

@@ -25,6 +25,7 @@ window.load = `
     bootstrap-size.js
 	 question-list.class.js
 	 question.class.js
+	 alternative.class.js
 	 alternative-list.class.js
     app.class.js
 

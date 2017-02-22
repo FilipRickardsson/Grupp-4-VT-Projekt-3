@@ -19,7 +19,7 @@ class App {
 
 		var questionList = new QuestionList();
 
-		questionList.readAllFromDb(() => {
+		questionList.readAllQuestions(() => {
 			console.log("Read from DB", questionList);
 			questionList.display('body');
 		});
@@ -27,13 +27,13 @@ class App {
 		console.log('debug 1');
 
 
-		//var alternativeList = new AlternativeList();
-/*
+		var alternativeList = new AlternativeList();
+
 	 	alternativeList.readAllAlternatives(() => {
 			console.log("Read from DB", alternativeList);
 			alternativeList.display('body');
 		});
-	*/	
+		
 		console.log('debug 2');
 		
 		
