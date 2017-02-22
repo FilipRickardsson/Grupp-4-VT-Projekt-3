@@ -23,22 +23,13 @@ window.load = `
   
   js/classes/
     bootstrap-size.js
-    modal.class.js
-    organism.class.js  
-    pet.class.js
-    pet-owner.class.js
-    pet-list.class.js
-    pet-owner-list.class.js
-    pet-owner-view.class.js
-    test-data-generator.class.js
+	 question-list.class.js
+	 question.class.js
     app.class.js
 
   templates/
     bootstrap-size.html
-    modal.html
-    pet.html
-    pet-owner.html
-    pet-owner-view.html
+	 question.html
 
   js/main.js
 
