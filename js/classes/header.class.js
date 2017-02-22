@@ -1,4 +1,4 @@
-class header extends Base {
+class Header extends Base {
 
   constructor(propertyValues){
     super(propertyValues);
