@@ -50,8 +50,10 @@ class App {
 
 			for (let i = 0; i < questionList.length; i++) {
 				questionList[i].display('body');
-				questionList[i].alternatives[0].display('body');
-				questionList[i].alternatives[1].display('body');
+
+				for (let j = 0; j < questionList[i].alternatives.length; j++) {
+					questionList[i].alternatives[j].display('body');
+				}
 			}
 		});
 
