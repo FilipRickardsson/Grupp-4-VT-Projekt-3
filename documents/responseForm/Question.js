@@ -1,21 +1,31 @@
+
+
+
 $(document).ready(function(){
-	//test();
-	//toDo();
-
-	$("#move_up").click( function() {
-
-		$("#img").toggle();
-		
-	});//end move_up
+	$('.next').click(function(){
+alert('det här funkar');
+	})
 	
-	$("#move_down").click( function() { 
-		$("#img").fadeIn(1000);
-		$('#img').slideToggle('slow');
-	});//end move_down $("#color").click( function() {
-
-
-
-
+	$('.next').click(function(){
+		alert('you clicked next '  );
+		
+		switch(){
+			case 1 : 
+			alert('you clicked option number '  );
+			break;
+			case 2 : 
+			break;
+			case 3 : 
+			break;
+			case 4 : 
+			break;
+			default:
+			 alert('you must choose one option!');
+			break;
+			
+		}
+	})
+	
 });
 
 	/*	
