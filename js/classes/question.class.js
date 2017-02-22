@@ -5,13 +5,4 @@ class Question extends Base {
 
 	}
 
-	static get sqlQueries() {
-		return {
-			newPetOwner: `
-        INSERT petowners SET ?
-      `
-		}
-	}
-
-
 }

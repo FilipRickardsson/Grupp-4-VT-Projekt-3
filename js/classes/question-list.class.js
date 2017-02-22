@@ -4,9 +4,10 @@ class QuestionList extends List {
 		super(Question, items);
 	}
 
-	readAllQuestions(callback) {
+	readAllFromDb(callback) {
 		this.db.readAll((data) => {
 			this.push.apply(this, data);
+			console.log(data);
 			callback();
 		});
 	}
