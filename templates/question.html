@@ -3,4 +3,17 @@ Question.addTemplate('default', function(){return `
 	<h1>Question: ${this.questionId}</h1>
 	<p>${this.text}</p>
 </div>
+
+<div>
+	<h1>Alternatives: ${this.alternativeId}</h1>
+	<p>${this.text}</p>
+</div>
+
+<div>
+    <div class="btn-group" role="group" aria-label="...">
+        <button type="button" class="btn btn-default">Back</button>
+        <button type="button" class="btn btn-default">Submit the whole shabam</button>
+        <button type="button" class="btn btn-default">Next</button>
+</div>
+</div>
 `});
