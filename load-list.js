@@ -30,6 +30,9 @@ window.load = `
     result.class.js
 	 result-list.class.js
 	 buttons.class.js
+	 header.class.js
+	 content.class.js
+	 footer.class.js
     app.class.js
 
   templates/
@@ -38,6 +41,9 @@ window.load = `
     result.html
 	 alternative.html
 	 buttons.html
+	 header.html
+	 content.html
+	 footer.html
 
   js/main.js
 

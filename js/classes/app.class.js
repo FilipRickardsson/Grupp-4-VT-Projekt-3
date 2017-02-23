@@ -10,7 +10,14 @@ class App {
 
 		var header = new Header();
 		header.display('body');
-		
+
+		var content = new Content();
+		content.display('body');
+
+		var footer = new Footer();
+		footer.display('body');
+
+
 		/*
 		var a = new Question({
 			questionId: 1,
@@ -46,14 +53,22 @@ class App {
 				//alternativeList.display('body');
 
 				for (let i = 0; i < questionList.length; i++) {
-					questionList[i].display('body');
+					questionList[i].display('#content');
 
 					for (let j = 0; j < questionList[i].alternatives.length; j++) {
-						questionList[i].alternatives[j].display('body');
+						questionList[i].alternatives[j].display('#content');
 					}
 					var buttons = new Buttons();
-					buttons.display('body');
+					buttons.display('#content');
 				}
+
+				var resultList = new ResultList();
+
+				resultList.readAllResult(() => {
+					console.log("Read from DB", resultList);
+					resultList.display('#content');
+				});
+
 			});
 
 		});
@@ -62,15 +77,9 @@ class App {
 
 		console.log('debug 2');
 
-		/*
-		var resultList = new ResultList();
-
-		resultList.readAllResult(() => {
-			console.log("Read from DB", resultList);
-			resultList.display('body');
-		});
 
 		console.log('debug 3');
-		*/
+
+
 	}
 }
