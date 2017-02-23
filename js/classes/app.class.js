@@ -17,6 +17,26 @@ class App {
 		a.display('body');
 		*/
 
+
+		var resultList = new ResultList();
+
+		resultList.readAllResult(() => {
+			console.log("Read from DB", resultList);
+			resultList.display('body');
+		});
+		
+		console.log('debug 1');
+
+
+		var alternativeList = new AlternativeList();
+
+	 	alternativeList.readAllAlternatives(() => {
+			console.log("Read from DB", alternativeList);
+			alternativeList.display('body');
+		});
+		
+		console.log('debug 2');
+		/*
 		var questionList = new QuestionList();
 
 		questionList.readAllQuestions(() => {
@@ -36,6 +56,7 @@ class App {
 		
 		console.log('debug 2');
 		
+		*/
 		
-	}
-}
+	}//end of constuctor
+}//end of class
