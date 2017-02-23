@@ -33,6 +33,8 @@ window.load = `
 	 header.class.js
 	 content.class.js
 	 footer.class.js
+   test.class.js
+   result-view.class.js
     app.class.js
 
   templates/
