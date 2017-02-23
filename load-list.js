@@ -32,8 +32,10 @@ window.load = `
 	 buttons.class.js
 	 header.class.js
 	 content.class.js
+    thanks.class.js
 	 footer.class.js
     app.class.js
+    
 
   templates/
     bootstrap-size.html
@@ -43,7 +45,9 @@ window.load = `
 	 buttons.html
 	 header.html
 	 content.html
+    thanks.html
 	 footer.html
+     
 
   js/main.js
 

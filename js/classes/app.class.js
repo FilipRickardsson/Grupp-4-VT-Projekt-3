@@ -16,6 +16,9 @@ class App {
 
 		var footer = new Footer();
 		footer.display('body');
+        
+        var thanks = new Thanks();
+        thanks.display('#content')
 
 
 		/*
