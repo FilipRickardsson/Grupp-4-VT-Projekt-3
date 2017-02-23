@@ -17,20 +17,24 @@ class App {
 		var footer = new Footer();
 		footer.display('body');
 
-   // Some routes
-    var router = new Router({
-      '/': ()=>{ new Test(); },
-      '/result': ()=> { new ResultView(); },
+		// Some routes
+		var router = new Router({
+			'/': () => {
+				new Test();
+			},
+			'/result': () => {
+				new ResultView();
+			},
 
-    });
+		});
 
 
-   /*     if(student) {
-         new Test();
+		/*     if(student) {
+		      new Test();
 
-        }
-        else{
-        	new ResultView();
-        } */
+		     }
+		     else{
+		     	new ResultView();
+		     } */
 	}
 }

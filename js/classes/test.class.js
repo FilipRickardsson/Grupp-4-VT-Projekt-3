@@ -1,9 +1,10 @@
 class Test extends Base {
 
-  constructor(propertyValues){
-    super(propertyValues);
-      $( "#content").empty();
- var questionList = new QuestionList();
+	constructor(propertyValues) {
+		super(propertyValues);
+		$("#content").empty();
+		var questionList = new QuestionList();
+		this.questionList = questionList;
 		var alternativeList = new AlternativeList();
 
 		questionList.readAllQuestions(() => {
@@ -23,30 +24,25 @@ class Test extends Base {
 					});
 
 				});
-	/*			for (let i = 0; i < questionList.length; i++) {
-					questionList[i].display('#content');
-
-					for (let j = 0; j < questionList[i].alternatives.length; j++) {
-						questionList[i].alternatives[j].display('#content');
-					}
-					var buttons = new Buttons();
-					buttons.display('#content');
-				}
-*/
+				
 			});
 
+			this.showQuestion(0);
 		});
-   
-   this.showQuestion(0);
-  }
- 
-showQuestion(index) {
-     console.log(a);
-      questionList[index].display('#content');
-      for(let j = 0; questionsList[j].alternatives.length; j++) {
-        questionList[index].alternatives[j].display('#content');
-      }  
-    
 
- }
+	}
+
+	showQuestion(index) {
+		console.log('1', this.questionList);
+		console.log('2', this.questionList.length);
+		console.log('3', this.questionList[index]);
+		console.log('4', this.questionList[index].alternatives);
+		
+		this.questionList[index].display('#content');
+		for (let j = 0; this.questionList[index].alternatives.length; j++) {
+			this.questionList[index].alternatives[j].display('#content');
+		}
+
+
+	}
 }
