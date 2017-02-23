@@ -20,7 +20,7 @@ class App {
 		// Some routes
 		var router = new Router({
 			'/': () => {
-				new Test();
+				window.a = new Test();
 			},
 			'/result': () => {
 				new ResultView();
