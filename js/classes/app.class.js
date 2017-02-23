@@ -17,6 +17,7 @@ class App {
 		a.display('body');
 		*/
 
+
 		var resultList = new ResultList();
 
 		resultList.readAllResult(() => {
@@ -35,8 +36,7 @@ class App {
 		});
 		
 		console.log('debug 2');
-
-/*
+		/*
 		var questionList = new QuestionList();
 
 		questionList.readAllQuestions(() => {
@@ -55,8 +55,8 @@ class App {
 		});
 		
 		console.log('debug 2');
+		
 		*/
 		
-		
-	}
-}
+	}//end of constuctor
+}//end of class

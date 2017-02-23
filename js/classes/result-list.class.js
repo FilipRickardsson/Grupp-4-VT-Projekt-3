@@ -15,7 +15,7 @@ class ResultList extends List {
 	static get sqlQueries() {
 		return {
 			readAllResult: `
-        SELECT id, text FROM grade
+        SELECT id, grade FROM grade
       `
 		}
 	}

@@ -24,7 +24,9 @@ window.load = `
   js/classes/
     bootstrap-size.js
 	 question-list.class.js
+   result-list.class.js
 	 question.class.js
+   result.class.js
 	 alternative.class.js
 	 alternative-list.class.js
     app.class.js
@@ -32,6 +34,7 @@ window.load = `
   templates/
     bootstrap-size.html
 	 question.html
+   result.html
 	 alternative.html
 
   js/main.js
