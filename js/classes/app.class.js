@@ -1,27 +1,41 @@
 class App {
 
-  constructor(){
+	constructor() {
 
-    // Development tool
-    var bootstrapSizeTool = new BootstrapSize();
-    bootstrapSizeTool.display('body');
+		console.log('start');
 
-    // Create a petowner
-    var a = new PetOwner({
-      firstName: 'Esmeralda',
-      lastName: 'Efraimsdotter',
-      birthDate: '1997-02-28',
-      pets: [
-        {name: 'Py', birthDate: '2017-02-20' },
-        {name: 'Po', birthDate: '1975-06-17'}
-      ]
-    });
+		// Development tool
+		var bootstrapSizeTool = new BootstrapSize();
+		bootstrapSizeTool.display('body');
 
-    // a.display('body');
-    window.a = a;
+		/*
+		var a = new Question({
+			questionId: 1,
+			text: 'This is text',
+		});
 
-    // Try
-    var testDataGen = new TestDataGenerator();
+		a.display('body');
+		*/
 
-  }
+		var questionList = new QuestionList();
+
+		questionList.readAllQuestions(() => {
+			console.log("Read from DB", questionList);
+			questionList.display('body');
+		});
+		
+		console.log('debug 1');
+
+
+		var alternativeList = new AlternativeList();
+
+	 	alternativeList.readAllAlternatives(() => {
+			console.log("Read from DB", alternativeList);
+			alternativeList.display('body');
+		});
+		
+		console.log('debug 2');
+		
+		
+	}
 }
