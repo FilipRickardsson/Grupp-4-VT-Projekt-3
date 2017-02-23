@@ -7,7 +7,7 @@ class QuestionList extends List {
 	readAllQuestions(callback) {
 		this.db.readAllQuestions((data) => {
 			this.push.apply(this, data);
-			console.log(data);
+			//console.log(data);
 			callback();
 		});
 	}

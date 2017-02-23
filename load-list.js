@@ -24,18 +24,20 @@ window.load = `
   js/classes/
     bootstrap-size.js
 	 question-list.class.js
-   result-list.class.js
 	 question.class.js
-   result.class.js
 	 alternative.class.js
 	 alternative-list.class.js
+    result.class.js
+	 result-list.class.js
+	 buttons.class.js
     app.class.js
 
   templates/
     bootstrap-size.html
 	 question.html
-   result.html
+    result.html
 	 alternative.html
+	 buttons.html
 
   js/main.js
 
