@@ -22,14 +22,14 @@ window.load = `
     router.class.js
   
   js/classes/
-    bootstrap-size.js
+   	 bootstrap-size.js
 	 question-list.class.js
-   result-list.class.js
+   	result-list.class.js
 	 question.class.js
-   result.class.js
+   	result.class.js
 	 alternative.class.js
 	 alternative-list.class.js
-    app.class.js
+    	app.class.js
 
   templates/
     bootstrap-size.html
