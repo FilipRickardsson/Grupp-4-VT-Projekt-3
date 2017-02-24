@@ -24,10 +24,20 @@ class Test extends Base {
 		});
 	}
 insertAnswers(callback){
+	for(let i = 0; i < this.answers.length; i++){
+
 	this.db.insertAnswer({
-  	className : 'answers'
+  	user_userId : window.user,
+  	alternative_optionId : this.answers[i] 
 	},callback);
   }
+}
+   /*collectAnswers() {
+     for(let i = 0; i < this.answers.length; i++){
+
+     }
+   } */
+
 
 	showQuestion() {
 		$('#content').empty();
@@ -46,7 +56,7 @@ insertAnswers(callback){
 		static get sqlQueries() {
 		return {
 			insertAnswer: `
-    	INSERT class SET ?
+    	INSERT user_answers_alternative SET ?
   	
       `}
      }
