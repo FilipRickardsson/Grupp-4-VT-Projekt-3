@@ -78,7 +78,9 @@ class App {
 
 		});
         
-        correctAnswerList.readAllCorrectAlternatives
+        correctAnswerList.readAllCorrectAlternatives(() => {
+            console.log(correctAnswerList);
+        });
 
 		console.log(questionList);
 
