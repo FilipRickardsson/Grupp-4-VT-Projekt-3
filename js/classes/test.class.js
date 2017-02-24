@@ -7,11 +7,15 @@ class Test extends Base {
 		this.questionList = questionList;
 		var alternativeList = new AlternativeList();
 		this.alternativeList = alternativeList;
-
+ 
 		this.currentQuestion = 0;
-		
+		this.answers = [];
+        
 		questionList.readAllQuestions(() => {
-
+          for (var answer of this.questionList) {
+			 this.answers.push(-1);
+			 console.log(this.answers);
+			}
 			alternativeList.readAllAlternatives(() => {
 				//console.log(alternativeList);
 				this.showQuestion();
