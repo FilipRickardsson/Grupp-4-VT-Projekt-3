@@ -23,6 +23,11 @@ class Test extends Base {
 
 		});
 	}
+insertAnswers(callback){
+	this.db.insertAnswer({
+  	className : 'answers'
+	},callback);
+  }
 
 	showQuestion() {
 		$('#content').empty();
@@ -38,4 +43,11 @@ class Test extends Base {
 		buttons.test = this;
 		buttons.display('#content');
 	}
+		static get sqlQueries() {
+		return {
+			insertAnswer: `
+    	INSERT class SET ?
+  	
+      `}
+     }
 }

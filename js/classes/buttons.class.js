@@ -29,6 +29,7 @@ class Buttons extends Base {
 		for (var answer of this.test.answers) {
 			 console.log(answer);
 			} 
+		this.test.insertAnswers();
 	}
 
 }
