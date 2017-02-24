@@ -76,7 +76,7 @@ class App {
 		console.log(questionList);
 
 		console.log('debug 2');
-
+        console.log(Content);
 
 		console.log('debug 3');
 
