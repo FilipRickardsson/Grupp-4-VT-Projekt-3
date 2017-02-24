@@ -1,7 +1,8 @@
 class App {
-
+ 
 	constructor() {
-
+    var user = 'bob@student.com';
+    window.user = user;
 		console.log('start');
 
 		// Development tool
