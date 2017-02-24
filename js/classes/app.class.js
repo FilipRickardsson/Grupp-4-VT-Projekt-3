@@ -33,7 +33,7 @@ class App {
 		var alternativeList = new AlternativeList();
         var correctAnswerList = new CorrectAnswerList();
        /* var studentAnswerList = new StudentAnswerlist();*/
-        
+        correctAnswerList.test = "This might be a clue";
 
 		questionList.readAllQuestions(() => {
 
