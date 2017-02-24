@@ -31,6 +31,9 @@ class App {
 
 		var questionList = new QuestionList();
 		var alternativeList = new AlternativeList();
+        var correctAnswerList = new CorrectAnswerList();
+       /* var studentAnswerList = new StudentAnswerlist();*/
+        
 
 		questionList.readAllQuestions(() => {
 
@@ -67,16 +70,20 @@ class App {
 				resultList.readAllResult(() => {
 					console.log("Read from DB", resultList);
 					resultList.display('#content');
+                    
+                    
 				});
 
 			});
 
 		});
+        
+        correctAnswerList.readAllCorrectAlternatives
 
 		console.log(questionList);
 
 		console.log('debug 2');
-        console.log(Content);
+        console.log(correctAnswerList);
 
 		console.log('debug 3');
 

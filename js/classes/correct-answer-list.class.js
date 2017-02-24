@@ -22,7 +22,4 @@ AND correct = 1;
       `
 		}
 	}
-    var correct = new CorrectAnswer();
-correct.console.log("At least it printed text");
-
 }
