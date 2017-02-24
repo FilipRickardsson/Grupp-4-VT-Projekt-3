@@ -29,6 +29,7 @@ window.load = `
 	 alternative-list.class.js
     result.class.js
 	 result-list.class.js
+   result-view.class.js
 	 buttons.class.js
 	 header.class.js
 	 content.class.js
