@@ -29,6 +29,8 @@ window.load = `
 	 alternative-list.class.js
     result.class.js
 	 result-list.class.js
+    correction.class.js
+    correction-list.class.js
 	 buttons.class.js
 	 header.class.js
 	 content.class.js
@@ -40,6 +42,7 @@ window.load = `
 	 question.html
     result.html
 	 alternative.html
+    correction.html
 	 buttons.html
 	 header.html
 	 content.html
