@@ -25,6 +25,7 @@ class Buttons extends Base {
 	}
 
 	submit() {
+		
 		console.log('Submit button');
 		for (var answer of this.test.answers) {
 			 console.log(answer);
