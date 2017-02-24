@@ -25,7 +25,8 @@ class Buttons extends Base {
 	}
 
 	submit() {
-		
+		var answer = $( "input[type=radio][name=radio-button]:checked" ).val();
+		this.test.answers[this.test.currentQuestion]=answer;
 		console.log('Submit button');
 		for (var answer of this.test.answers) {
 			 console.log(answer);
