@@ -30,7 +30,11 @@ window.load = `
     result.class.js
 	 result-list.class.js
     correction.class.js
-    correction-list.class.js
+    correct-answer.class.js
+    correct-answer-list.class.js
+    student-answer.class.js
+    student-answer-list.class.js
+    
 	 buttons.class.js
 	 header.class.js
 	 content.class.js
@@ -42,7 +46,6 @@ window.load = `
 	 question.html
     result.html
 	 alternative.html
-    correction.html
 	 buttons.html
 	 header.html
 	 content.html
