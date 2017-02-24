@@ -8,26 +8,30 @@ class Test extends Base {
 		var alternativeList = new AlternativeList();
 		this.alternativeList = alternativeList;
 
+		this.currentQuestion = 0;
+		
 		questionList.readAllQuestions(() => {
 
 			alternativeList.readAllAlternatives(() => {
 				//console.log(alternativeList);
-				this.showQuestion(0);
+				this.showQuestion();
 			});
 
 		});
 	}
 
-	showQuestion(index) {
-		this.questionList[index].display('#content');
+	showQuestion() {
+		$('#content').empty();
+		this.questionList[this.currentQuestion].display('#content');
 		
 		for (var alternative of this.alternativeList) {
-			if (alternative.question_questionId === this.questionList[index].questionId) {
+			if (alternative.question_questionId === this.questionList[this.currentQuestion].questionId) {
 				alternative.display('#content');
 			}
 		}
 		
 		var buttons = new Buttons();
+		buttons.test = this;
 		buttons.display('#content');
 	}
 }
