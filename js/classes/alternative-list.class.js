@@ -15,7 +15,7 @@ class AlternativeList extends List {
 	static get sqlQueries() {
 		return {
 			readAllAlternatives: `
-			SELECT question_has_alternative.question_questionId, alternative, correct
+			SELECT alternative_alternativeId, question_has_alternative.question_questionId, alternative, correct
 			FROM alternative
 			JOIN question_has_alternative
 			ON alternativeId = alternative_alternativeId
