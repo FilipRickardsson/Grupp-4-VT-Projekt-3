@@ -13,11 +13,27 @@ class UserList extends List {
 		});
 	}
 
+	checkGrade(callback) {
+		this.db.checkGrade({
+			user_userId: window.user
+		}, (data) => {
+			this.push.apply(this, data);
+			callback();
+		});
+	}
+
+
 	static get sqlQueries() {
 		return {
 			login: `
         	SELECT *
 			from user
+			WHERE ?
+			`,
+
+			checkGrade: `
+        	SELECT *
+			from grade
 			WHERE ?
 			`
 		}

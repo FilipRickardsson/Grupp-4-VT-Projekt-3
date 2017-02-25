@@ -11,19 +11,31 @@ class Test extends Base {
 		this.currentQuestion = 0;
 		this.answers = [];
 
-		questionList.readAllQuestions(() => {
-			for (var answer of this.questionList) {
-				this.answers.push(-1);
-				console.log(this.answers);
-			}
-			alternativeList.readAllAlternatives(() => {
-				//console.log(alternativeList);
-				this.showQuestion();
-			});
+		var checkGrade = new UserList();
+		checkGrade.checkGrade(() => {
+			if (checkGrade.length > 0) {
+				console.log('nope');
+			} else {
+				
+				console.log('yup');
+				questionList.readAllQuestions(() => {
+					for (var answer of this.questionList) {
+						this.answers.push(-1);
+						console.log(this.answers);
+					}
+					alternativeList.readAllAlternatives(() => {
+						//console.log(alternativeList);
+						this.showQuestion();
+					});
 
+				});
+
+			}
 		});
+
+
 	}
-	
+
 	insertAnswers(callback) {
 			for (let i = 0; i < this.answers.length; i++) {
 
