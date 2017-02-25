@@ -38,6 +38,7 @@ window.load = `
 		user.class.js
 		user-list.class.js
 		user-denied.class.js
+		user-unknown.class.js
 		app.class.js
 
 	templates/
@@ -50,6 +51,7 @@ window.load = `
 		content.html
 		footer.html
 		user-denied.html
+		user-unknown.html
 
 	js/main.js
 

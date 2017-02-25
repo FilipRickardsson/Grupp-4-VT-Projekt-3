@@ -15,20 +15,15 @@ class Test extends Base {
 		var checkGrade = new UserList();
 		checkGrade.checkGrade(() => {
 			if (checkGrade.length > 0) {
-				console.log('nope');
-				
 				var userDenied = new UserDenied();
 				userDenied.display('#content');
 				
 			} else {
-				
-				console.log('yup');
 				questionList.readAllQuestions(() => {
 					for (var answer of this.questionList) {
 						this.answers.push(-1);
 					}
 					alternativeList.readAllAlternatives(() => {
-						//console.log(alternativeList);
 						this.showQuestion();
 					});
 
