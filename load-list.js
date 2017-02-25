@@ -40,6 +40,7 @@ window.load = `
 		user-denied.class.js
 		user-unknown.class.js
 		questions-left.class.js
+		thanks.class.js
 		app.class.js
 
 	templates/
@@ -54,6 +55,8 @@ window.load = `
 		user-denied.html
 		user-unknown.html
 		questions-left.html
+		thanks.html
+
 
 	js/main.js
 
