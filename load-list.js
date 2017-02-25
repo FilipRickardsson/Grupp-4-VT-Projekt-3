@@ -37,6 +37,7 @@ window.load = `
 		result-view.class.js
 		user.class.js
 		user-list.class.js
+		user-denied.class.js
 		app.class.js
 
 	templates/
@@ -48,6 +49,7 @@ window.load = `
 		header.html
 		content.html
 		footer.html
+		user-denied.html
 
 	js/main.js
 

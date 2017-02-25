@@ -2,6 +2,7 @@ class Test extends Base {
 
 	constructor(propertyValues) {
 		super(propertyValues);
+		
 		$("#content").empty();
 		var questionList = new QuestionList();
 		this.questionList = questionList;
@@ -15,13 +16,16 @@ class Test extends Base {
 		checkGrade.checkGrade(() => {
 			if (checkGrade.length > 0) {
 				console.log('nope');
+				
+				var userDenied = new UserDenied();
+				userDenied.display('#content');
+				
 			} else {
 				
 				console.log('yup');
 				questionList.readAllQuestions(() => {
 					for (var answer of this.questionList) {
 						this.answers.push(-1);
-						console.log(this.answers);
 					}
 					alternativeList.readAllAlternatives(() => {
 						//console.log(alternativeList);
