@@ -39,6 +39,7 @@ window.load = `
 		user-list.class.js
 		user-denied.class.js
 		user-unknown.class.js
+		questions-left.class.js
 		app.class.js
 
 	templates/
@@ -52,6 +53,7 @@ window.load = `
 		footer.html
 		user-denied.html
 		user-unknown.html
+		questions-left.html
 
 	js/main.js
 

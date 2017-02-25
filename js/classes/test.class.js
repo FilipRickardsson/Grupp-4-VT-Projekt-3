@@ -2,7 +2,7 @@ class Test extends Base {
 
 	constructor(propertyValues) {
 		super(propertyValues);
-		
+
 		$("#content").empty();
 		var questionList = new QuestionList();
 		this.questionList = questionList;
@@ -17,7 +17,7 @@ class Test extends Base {
 			if (checkGrade.length > 0) {
 				var userDenied = new UserDenied();
 				userDenied.display('#content');
-				
+
 			} else {
 				questionList.readAllQuestions(() => {
 					for (var answer of this.questionList) {
@@ -31,7 +31,6 @@ class Test extends Base {
 
 			}
 		});
-
 
 	}
 
@@ -61,10 +60,16 @@ class Test extends Base {
 			}
 		}
 
+		var questionsLeft = new QuestionsLeft();
+		questionsLeft.currentQuestion = this.currentQuestion;
+		questionsLeft.nbrOfQuestions = this.questionList.length;
+		questionsLeft.display('#content');
+		
 		var buttons = new Buttons();
 		buttons.test = this;
 		buttons.display('#content');
 	}
+
 	static get sqlQueries() {
 		return {
 			insertAnswer: `
