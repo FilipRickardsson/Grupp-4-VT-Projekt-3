@@ -20,9 +20,17 @@ class Test extends Base {
 
 			} else {
 				questionList.readAllQuestions(() => {
-					for (var answer of this.questionList) {
+					/*questionList.forEach(function (question) {
+						console.log('debug 1');
+						this.answers.push(-1);
+						question.nbrOfQuestions = this.questionList.length;
+					});
+*/
+					for (var question of this.questionList) {
+						question.nbrOfQuestions = this.questionList.length;
 						this.answers.push(-1);
 					}
+					
 					alternativeList.readAllAlternatives(() => {
 						this.showQuestion();
 					});
@@ -60,11 +68,6 @@ class Test extends Base {
 			}
 		}
 
-		var questionsLeft = new QuestionsLeft();
-		questionsLeft.currentQuestion = this.currentQuestion;
-		questionsLeft.nbrOfQuestions = this.questionList.length;
-		questionsLeft.display('#content');
-		
 		var buttons = new Buttons();
 		buttons.test = this;
 		buttons.display('#content');
