@@ -27,13 +27,13 @@ class UserList extends List {
 		return {
 			login: `
         	SELECT *
-			from user
+			FROM user
 			WHERE ?
 			`,
 
 			checkGrade: `
         	SELECT *
-			from grade
+			FROM user_answers_alternative
 			WHERE ?
 			`
 		}

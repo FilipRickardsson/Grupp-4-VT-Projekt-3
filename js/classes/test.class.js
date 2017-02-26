@@ -17,20 +17,13 @@ class Test extends Base {
 			if (checkGrade.length > 0) {
 				var userDenied = new UserDenied();
 				userDenied.display('#content');
-
 			} else {
 				questionList.readAllQuestions(() => {
-					/*questionList.forEach(function (question) {
-						console.log('debug 1');
-						this.answers.push(-1);
-						question.nbrOfQuestions = this.questionList.length;
-					});
-*/
 					for (var question of this.questionList) {
 						question.nbrOfQuestions = this.questionList.length;
-						this.answers.push(-1);
+						this.answers.push(1);
 					}
-					
+
 					alternativeList.readAllAlternatives(() => {
 						this.showQuestion();
 					});
@@ -43,20 +36,13 @@ class Test extends Base {
 	}
 
 	insertAnswers(callback) {
-			for (let i = 0; i < this.answers.length; i++) {
-
-				this.db.insertAnswer({
-					user_userId: window.user,
-					alternative_optionId: this.answers[i]
-				}, callback);
-			}
+		for (let i = 0; i < this.answers.length; i++) {
+			this.db.insertAnswer({
+				user_userId: window.user,
+				alternative_optionId: this.answers[i]
+			}, callback);
 		}
-		/*collectAnswers() {
-		  for(let i = 0; i < this.answers.length; i++){
-
-		  }
-		} */
-
+	}
 
 	showQuestion() {
 		$('#content').empty();
