@@ -17,6 +17,8 @@ INSERT INTO question (text, class_classname) VALUES ('Is pizza the best thing ev
 
 /* Options */
 
+INSERT INTO alternative (alternative, correct) VALUES ('none', false);
+
 INSERT INTO alternative (alternative, correct) VALUES ('1', false);
 INSERT INTO alternative (alternative, correct) VALUES ('2', true);
 INSERT INTO alternative (alternative, correct) VALUES ('3', false);
@@ -30,16 +32,16 @@ INSERT INTO alternative (alternative, correct) VALUES ('No', false);
 
 /* Link questions to options */
 
-INSERT INTO question_has_alternative VALUES (1, 1);
 INSERT INTO question_has_alternative VALUES (1, 2);
 INSERT INTO question_has_alternative VALUES (1, 3);
+INSERT INTO question_has_alternative VALUES (1, 4);
 
-INSERT INTO question_has_alternative VALUES (2, 4);
 INSERT INTO question_has_alternative VALUES (2, 5);
 INSERT INTO question_has_alternative VALUES (2, 6);
+INSERT INTO question_has_alternative VALUES (2, 7);
 
-INSERT INTO question_has_alternative VALUES (3, 7);
 INSERT INTO question_has_alternative VALUES (3, 8);
+INSERT INTO question_has_alternative VALUES (3, 9);
 
 /* Answers */
 
