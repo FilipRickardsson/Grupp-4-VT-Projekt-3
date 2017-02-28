@@ -2,7 +2,7 @@ class Test extends Base {
 
 	constructor(propertyValues) {
 		super(propertyValues);
-
+        
 		$("#content").empty();
 		var questionList = new QuestionList();
 		this.questionList = questionList;
@@ -26,6 +26,7 @@ class Test extends Base {
 
 					alternativeList.readAllAlternatives(() => {
 						this.showQuestion();
+						
 					});
 
 				});
@@ -55,8 +56,11 @@ class Test extends Base {
 		}
 
 		var buttons = new Buttons();
+		buttons.nbrOfQuestions = this.questionList.length;
 		buttons.test = this;
 		buttons.display('#content');
+$(()=>{buttons.setVisibility(this.currentQuestion);});
+
 	}
 
 	static get sqlQueries() {
