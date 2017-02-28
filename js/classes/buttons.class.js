@@ -1,29 +1,26 @@
 class Buttons extends Base {
-      
+
 	constructor(propertyValues = {}) {
 		super(propertyValues);
-		this.visibleNext = true;
-		this.visibleBack = true;
+		$('#btnBack').hide();
+		$('#btnNext').hide();
 	}
-    
-    setVisibility(currentQuestion) {
-    
-    	console.log("visiblity");
-    	if (currentQuestion==0){
-            this.visibleNext=true;
-    		this.visibleBack=false;
-    		console.log("visiblity2");
-    	}
-    	else if(currentQuestion==this.nbrOfQuestions) {
-                this.visibleNext = false;
-                this.visibleBack = true;
-    	}
-    	else{
-    	   this.visibleBack = true;
-    	   this.visibleNext = true;
-    	} 
-    }
-	
+
+	setVisibility(currentQuestion) {
+
+		console.log("visiblity");
+		if (currentQuestion == 0) {
+			$('#btnBack').hide();
+			$('#btnNext').show();
+		} else if (currentQuestion == this.nbrOfQuestions - 1) {
+			$('#btnBack').show();
+			$('#btnNext').hide();
+		} else {
+			$('#btnBack').show();
+			$('#btnNext').show();
+		}
+	}
+
 	next() {
 		if (this.test.currentQuestion + 1 > this.test.questionList.length - 1) {
 			return;
@@ -52,11 +49,11 @@ class Buttons extends Base {
 			console.log(answer);
 		}
 		this.test.insertAnswers();
-		
+
 		var thanks = new Thanks();
 		$('#content').empty();
 		thanks.display('#content');
-		
+
 	}
 
 
