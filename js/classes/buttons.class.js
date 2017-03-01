@@ -54,6 +54,7 @@ class Buttons extends Base {
 		$('#content').empty();
 		thanks.display('#content');
 
+		this.test.autoCorrect();
 	}
 
 

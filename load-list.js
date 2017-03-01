@@ -41,6 +41,8 @@ window.load = `
 		user-unknown.class.js
 		thanks.class.js
 		app.class.js
+        correctAnswer-list.class.js
+        correctAnswer.class.js
 
 	templates/
 		bootstrap-size.html
