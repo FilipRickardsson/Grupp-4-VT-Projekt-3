@@ -1,0 +1,1 @@
+SELECT * FROM projekt_3_vt.class_has_test;

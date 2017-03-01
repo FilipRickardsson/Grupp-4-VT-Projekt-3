@@ -19,21 +19,21 @@ INSERT	INTO	user	VALUES	('august@student.com',	'August',	'Strindberg','s', 	'Cla
 INSERT	INTO	user	VALUES	('fatima@teacher.com',	'Fatima',	'Rashid',	't',	'Class3');
 
 /*Test has Question*/
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	1	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	2	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	3	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	4	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	5	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	6	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	7	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	8	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	9	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	10	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	11	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	12	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	13	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	14	)
-INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	15	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	1'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	2'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	3'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	4'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	5'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	2'	,'	6'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	2'	,'	7'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	2'	,'	8'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	2'	,'	9'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	2'	,'	10'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'	,'	11'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'	,'	12'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'	,'	13'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'	,'	14'	)	;
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'	,'	15'	)	;
 
 
 
@@ -119,81 +119,83 @@ INSERT INTO alternative (alternative, correct) VALUES ('24 DEC', false);
 
 /* Link questions to options */
 
-INSERT INTO question_has_alternative VALUES (1, 2);
-INSERT INTO question_has_alternative VALUES (1, 3);
-INSERT INTO question_has_alternative VALUES (1, 4);
+INSERT INTO question_has_alternative VALUES ('1',' 2');				
+INSERT INTO question_has_alternative VALUES ('1',' 3');				
+INSERT INTO question_has_alternative VALUES ('1',' 4');				
+				
+INSERT INTO question_has_alternative VALUES ('2',' 5');				
+INSERT INTO question_has_alternative VALUES ('2',' 6');				
+INSERT INTO question_has_alternative VALUES ('2',' 7');				
+				
+INSERT INTO question_has_alternative VALUES ('3',' 8');				
+INSERT INTO question_has_alternative VALUES ('3',' 9');				
+				
+INSERT INTO question_has_alternative VALUES ('4',' 10');				
+INSERT INTO question_has_alternative VALUES ('4',' 11');				
+				
+INSERT INTO question_has_alternative VALUES ('5',' 12');				
+INSERT INTO question_has_alternative VALUES ('5',' 13');				
+INSERT INTO question_has_alternative VALUES ('5',' 14');				
+				
+INSERT INTO question_has_alternative VALUES ('6',' 15');				
+INSERT INTO question_has_alternative VALUES ('6',' 16');				
+INSERT INTO question_has_alternative VALUES ('6',' 17');				
+				
+INSERT INTO question_has_alternative VALUES ('7',' 18');				
+INSERT INTO question_has_alternative VALUES ('7',' 19');				
+INSERT INTO question_has_alternative VALUES ('7',' 20');				
+				
+INSERT INTO question_has_alternative VALUES ('8',' 21');				
+INSERT INTO question_has_alternative VALUES ('8',' 22');				
+INSERT INTO question_has_alternative VALUES ('8',' 23');				
+				
+INSERT INTO question_has_alternative VALUES ('9',' 24');				
+INSERT INTO question_has_alternative VALUES ('9',' 25');				
+INSERT INTO question_has_alternative VALUES ('9',' 26');				
+				
+INSERT INTO question_has_alternative VALUES ('10',' 27');				
+INSERT INTO question_has_alternative VALUES ('10',' 28');				
+INSERT INTO question_has_alternative VALUES ('10',' 29');				
+				
+INSERT INTO question_has_alternative VALUES ('11',' 30');				
+INSERT INTO question_has_alternative VALUES ('11',' 31');				
+INSERT INTO question_has_alternative VALUES ('11',' 32');				
+				
+INSERT INTO question_has_alternative VALUES ('12',' 33');				
+INSERT INTO question_has_alternative VALUES ('12',' 34');				
+INSERT INTO question_has_alternative VALUES ('12',' 35');				
+				
+INSERT INTO question_has_alternative VALUES ('13',' 36');				
+INSERT INTO question_has_alternative VALUES ('13',' 37');				
+INSERT INTO question_has_alternative VALUES ('13',' 38');				
+				
+INSERT INTO question_has_alternative VALUES ('14',' 39');				
+INSERT INTO question_has_alternative VALUES ('14',' 40');				
+INSERT INTO question_has_alternative VALUES ('14',' 41');				
+				
+INSERT INTO question_has_alternative VALUES ('15',' 42');				
+INSERT INTO question_has_alternative VALUES ('15',' 43');				
+INSERT INTO question_has_alternative VALUES ('15',' 44');				
 
-INSERT INTO question_has_alternative VALUES (2, 5);
-INSERT INTO question_has_alternative VALUES (2, 6);
-INSERT INTO question_has_alternative VALUES (2, 7);
 
-INSERT INTO question_has_alternative VALUES (3, 8);
-INSERT INTO question_has_alternative VALUES (3, 9);
+/* Alternatives answered by students */				
+				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 3');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 6');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 8');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 11');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 13');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 16');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 20');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 22');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 26');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 27');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 32');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 33');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 36');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 39');				
+INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 42');				
 
-INSERT INTO question_has_alternative VALUES (4, 10);
-INSERT INTO question_has_alternative VALUES (4, 11);
-
-INSERT INTO question_has_alternative VALUES (5, 12);
-INSERT INTO question_has_alternative VALUES (5, 13);
-INSERT INTO question_has_alternative VALUES (5, 14);
-
-INSERT INTO question_has_alternative VALUES (6, 15);
-INSERT INTO question_has_alternative VALUES (6, 16);
-INSERT INTO question_has_alternative VALUES (6, 17);
-
-INSERT INTO question_has_alternative VALUES (7, 18);
-INSERT INTO question_has_alternative VALUES (7, 19);
-INSERT INTO question_has_alternative VALUES (7, 20);
-
-INSERT INTO question_has_alternative VALUES (8, 21);
-INSERT INTO question_has_alternative VALUES (8, 22);
-INSERT INTO question_has_alternative VALUES (8, 23);
-
-INSERT INTO question_has_alternative VALUES (9, 24);
-INSERT INTO question_has_alternative VALUES (9, 25);
-INSERT INTO question_has_alternative VALUES (9, 26);
-
-INSERT INTO question_has_alternative VALUES (10, 27);
-INSERT INTO question_has_alternative VALUES (10, 28);
-INSERT INTO question_has_alternative VALUES (10, 29);
-
-INSERT INTO question_has_alternative VALUES (11, 30);
-INSERT INTO question_has_alternative VALUES (11, 31);
-INSERT INTO question_has_alternative VALUES (11, 32);
-
-INSERT INTO question_has_alternative VALUES (12, 33);
-INSERT INTO question_has_alternative VALUES (12, 34);
-INSERT INTO question_has_alternative VALUES (12, 35);
-
-INSERT INTO question_has_alternative VALUES (13, 36);
-INSERT INTO question_has_alternative VALUES (13, 37);
-INSERT INTO question_has_alternative VALUES (13, 38);
-
-INSERT INTO question_has_alternative VALUES (14, 39);
-INSERT INTO question_has_alternative VALUES (14, 40);
-INSERT INTO question_has_alternative VALUES (14, 41);
-
-INSERT INTO question_has_alternative VALUES (15, 42);
-INSERT INTO question_has_alternative VALUES (15, 43);
-INSERT INTO question_has_alternative VALUES (15, 44);
-
-/* Answers */
-
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 3);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 6);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 8);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 11);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 13);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 16);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 20);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 22);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 26);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 27);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 32);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 33);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 36);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 39);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 42);
 
 
 /* Grades */
