@@ -28,6 +28,15 @@ class Test extends Base {
 						this.showQuestion();
 						
 					});
+						var self = this;
+   					 self.seconds = 0;
+   					 self.set = setInterval(function () {
+   						 self.seconds++;
+   						 console.log(self.seconds);
+   					 }, 10);
+
+
+					
 
 				});
 
@@ -85,7 +94,15 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
 				console.log('if 3');
 				grade = 'vg';
 			}
-
+				console.log("seconds at submit: "+this.seconds);
+		var	hours = Math.floor(this.seconds / 3600);
+	this.seconds %= 3600;
+ var minutes = Math.floor(this.seconds / 60);
+ var seconds = this.seconds % 60;
+			
+			console.log(hours,minutes,seconds);
+                 
+			
 			this.insertGrade(grade);
 		});
 	}
@@ -96,6 +113,7 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
 			grade: grade
 		}, callback);
 	}
+
 
 	static get sqlQueries() {
 		return {
