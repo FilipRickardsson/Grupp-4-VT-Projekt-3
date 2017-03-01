@@ -15,6 +15,21 @@ INSERT INTO question (text, class_classname) VALUES ('What is 1 + 1?', 'Class1')
 INSERT INTO question (text, class_classname) VALUES ('In what county is Malmö?', 'Class1');
 INSERT INTO question (text, class_classname) VALUES ('Is pizza the best thing ever?', 'Class1');
 
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('4', 'Do you like coding?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('5', 'Surname of Isaac?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('6', 'What is color black?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('7', 'What is color white?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('8', 'What animal is Donald?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('9', 'Who is Luke Skywalkers father?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('10', 'How many legs does a chair have?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('11', 'Who is Clark Kent really?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('12', 'What is the difference between an array and an arrayList in Java?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('13', 'How do you save data for use while the program is running?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('14', 'What keyword do you use to create a new object in Java?', 'Class1');
+INSERT INTO `projekt_3_vt`.`question` (`questionId`, `text`, `class_className`) VALUES ('15', 'What date is new years eve?', 'Class1');
+
+
+
 /* Options */
 
 INSERT INTO alternative (alternative, correct) VALUES ('none', false);
