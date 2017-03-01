@@ -1,6 +1,8 @@
 /* Class */
 
-INSERT INTO class VALUES ('Class1');	
+INSERT INTO class VALUES ('Class1');
+INSERT INTO class VALUES ('Class2');
+INSERT INTO class VALUES ('Class3');	
 
 /* Users */
 
@@ -16,10 +18,28 @@ INSERT	INTO	user	VALUES	('werner@student.com',	'Werner',	'Abrahamsson',	's',	'Cl
 INSERT	INTO	user	VALUES	('august@student.com',	'August',	'Strindberg','s', 	'Class3');	
 INSERT	INTO	user	VALUES	('fatima@teacher.com',	'Fatima',	'Rashid',	't',	'Class3');
 
+/*Test has Question*/
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	1	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	2	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	3	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	4	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	1	,	5	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	6	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	7	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	8	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	9	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	2	,	10	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	11	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	12	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	13	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	14	)
+INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	(	3	,	15	)
+
+
 
 /* Questions */
 
-INSERT INTO question (text, class_classname) VALUES ('What is 1 + 1?', 'Class1');
+INSERT INTO question (text, class_classname) VALUES ('What is 1 + 1?', 'Class1', '1');
 INSERT INTO question (text, class_classname) VALUES ('In what county is Malmö?', 'Class1');
 INSERT INTO question (text, class_classname) VALUES ('Is pizza the best thing ever?', 'Class1');
 INSERT INTO question (text, class_classname) VALUES ('Do you like coding?', 'Class1');
