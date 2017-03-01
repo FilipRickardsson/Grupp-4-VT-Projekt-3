@@ -2,6 +2,23 @@ class Buttons extends Base {
 
 	constructor(propertyValues = {}) {
 		super(propertyValues);
+		$('#btnBack').hide();
+		$('#btnNext').hide();
+	}
+
+	setVisibility(currentQuestion) {
+
+		console.log("visiblity");
+		if (currentQuestion == 0) {
+			$('#btnBack').prop('disabled', true);
+			$('#btnNext').prop('disabled', false);
+		} else if (currentQuestion == this.nbrOfQuestions - 1) {
+			$('#btnBack').prop('disabled', false);
+			$('#btnNext').prop('disabled', true);
+		} else {
+			$('#btnBack').prop('disabled', false);
+			$('#btnNext').prop('disabled', false);
+		}
 	}
 
 	next() {
@@ -32,11 +49,12 @@ class Buttons extends Base {
 			console.log(answer);
 		}
 		this.test.insertAnswers();
-		
+
 		var thanks = new Thanks();
 		$('#content').empty();
 		thanks.display('#content');
-		
+
 	}
+
 
 }
