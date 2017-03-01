@@ -101,7 +101,7 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
  var seconds = this.seconds % 60;
 			
 			console.log(hours,minutes,seconds);
-                 
+            var time = hours + ':' + minutes ':' + seconds;      	
 			
 			this.insertGrade(grade);
 		});
