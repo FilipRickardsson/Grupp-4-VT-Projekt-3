@@ -9,6 +9,14 @@ INSERT INTO user VALUES ('jane@student.com', 'Jane', 'Janesson', 's', 'Class1');
 
 INSERT INTO user VALUES ('john@teacher.com', 'John', 'Jonsson', 't', 'Class1');
 
+INSERT	INTO	user	VALUES	('jeanette@student.com','Jeanette',	'Karlsson','s', 	'Class2');	
+INSERT	INTO	user	VALUES	('harald@student.com',	'Harald',	'Schrinkeln','s', 	'Class2');	
+INSERT	INTO	user	VALUES	('botilda@teacher.com',	'Botilda',	'Efraimsdotter','t',	'Class2');	
+INSERT	INTO	user	VALUES	('werner@student.com',	'Werner',	'Abrahamsson',	's',	'Class3');
+INSERT	INTO	user	VALUES	('august@student.com',	'August',	'Strindberg','s', 	'Class3');	
+INSERT	INTO	user	VALUES	('fatima@teacher.com',	'Fatima',	'Rashid',	't',	'Class3');
+
+
 /* Questions */
 
 INSERT INTO question (text, class_classname) VALUES ('What is 1 + 1?', 'Class1');
@@ -153,7 +161,20 @@ INSERT INTO question_has_alternative VALUES (15, 44);
 
 INSERT INTO user_answers_alternative VALUES ('bob@student.com', 3);
 INSERT INTO user_answers_alternative VALUES ('bob@student.com', 6);
-INSERT INTO user_answers_alternative VALUES ('bob@student.com', 7);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 8);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 11);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 13);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 16);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 20);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 22);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 26);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 27);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 32);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 33);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 36);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 39);
+INSERT INTO user_answers_alternative VALUES ('bob@student.com', 42);
+
 
 /* Grades */
 
