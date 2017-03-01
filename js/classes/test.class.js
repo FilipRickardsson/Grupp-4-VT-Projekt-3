@@ -63,12 +63,50 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
 
 	}
 
+	autoCorrect() {
+		var autoCorr = new CorrectAnswerList();
+
+		autoCorr.readCorrectAnswers(() => {
+			var g = Math.floor(this.questionList.length * 0.5);
+			var vg = Math.floor(this.questionList.length * 0.75);
+			var grade;
+
+			console.log('g', g);
+			console.log('vg', vg);
+			console.log('AutoCorr length:', autoCorr.length);
+
+			if (autoCorr.length < g) {
+				console.log('if 1');
+				grade = 'ig';
+			} else if (autoCorr.length >= g && autoCorr.length < vg) {
+				console.log('if 2');
+				grade = 'g';
+			} else {
+				console.log('if 3');
+				grade = 'vg';
+			}
+
+			this.insertGrade(grade);
+		});
+	}
+
+	insertGrade(grade, callback) {
+		this.db.insertGrade({
+			user_userId: window.user,
+			grade: grade
+		}, callback);
+	}
+
 	static get sqlQueries() {
 		return {
 			insertAnswer: `
-    	INSERT user_answers_alternative SET ?
-  	
-      `
+    			INSERT user_answers_alternative SET ?
+     		`,
+			insertGrade: `
+    			INSERT grade SET ?
+     		`
+
 		}
+
 	}
 }
