@@ -1,4 +1,4 @@
-class CorrectAnswerList extends List {
+	class CorrectAnswerList extends List {
 
 	constructor(items) {
 		super(Question, items);
