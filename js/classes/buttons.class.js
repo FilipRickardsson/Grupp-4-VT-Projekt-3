@@ -10,14 +10,14 @@ class Buttons extends Base {
 
 		console.log("visiblity");
 		if (currentQuestion == 0) {
-			$('#btnBack').hide();
-			$('#btnNext').show();
+			$('#btnBack').prop('disabled', true);
+			$('#btnNext').prop('disabled', false);
 		} else if (currentQuestion == this.nbrOfQuestions - 1) {
-			$('#btnBack').show();
-			$('#btnNext').hide();
+			$('#btnBack').prop('disabled', false);
+			$('#btnNext').prop('disabled', true);
 		} else {
-			$('#btnBack').show();
-			$('#btnNext').show();
+			$('#btnBack').prop('disabled', false);
+			$('#btnNext').prop('disabled', false);
 		}
 	}
 
