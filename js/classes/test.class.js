@@ -28,6 +28,7 @@ class Test extends Base {
 						this.showQuestion();
 
 					});
+					
 					var self = this;
 					self.seconds = 0;
 					self.set = setInterval(function () {
@@ -35,7 +36,7 @@ class Test extends Base {
 						console.log(self.seconds);
 					}, 1000);
 
-
+					this.self = self;
 
 
 				});
@@ -96,6 +97,10 @@ class Test extends Base {
 				console.log('if 3');
 				grade = 'vg';
 			}
+
+			console.log('trying to stop');
+			clearInterval(this.set);
+
 			console.log("seconds at submit: " + this.seconds);
 			var hours = Math.floor(this.seconds / 3600);
 			this.seconds %= 3600;
