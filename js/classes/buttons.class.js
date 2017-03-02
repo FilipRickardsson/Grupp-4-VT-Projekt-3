@@ -49,10 +49,11 @@ class Buttons extends Base {
 			console.log(answer);
 		}
 		this.test.insertAnswers();
-
-		var thanks = new Thanks();
-		$('#content').empty();
 		$('#myModal').display();
+		$('#content').empty();
+		var thanks = new Thanks();
+		
+		
 		thanks.display('#content');
 
 		this.test.autoCorrect();
