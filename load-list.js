@@ -40,14 +40,14 @@ window.load = `
 		user-denied.class.js
 		user-unknown.class.js
 		thanks.class.js
+      correctAnswer-list.class.js
+      correctAnswer.class.js
 		app.class.js
-        correctAnswer-list.class.js
-        correctAnswer.class.js
-        
+		correctAnswer-list.class.js
+		correctAnswer.class.js        
 
 	templates/
-		bootstrap-size.html
-		
+		bootstrap-size.html		
 		question.html
 		result.html
 		alternative.html
