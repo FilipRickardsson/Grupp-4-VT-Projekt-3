@@ -43,9 +43,11 @@ window.load = `
 		app.class.js
         correctAnswer-list.class.js
         correctAnswer.class.js
+        
 
 	templates/
 		bootstrap-size.html
+		
 		question.html
 		result.html
 		alternative.html
@@ -56,7 +58,7 @@ window.load = `
 		user-denied.html
 		user-unknown.html
 		thanks.html
-
+		
 
 	js/main.js
 
