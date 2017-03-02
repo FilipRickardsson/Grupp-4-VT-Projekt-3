@@ -34,7 +34,6 @@ class ResultView extends Base {
 			$('#content').append('<p>VG: ' + vg + '</p>');
 
 			$('#content').append('<p>Average: ' + avg + '</p>');
-			$('#content').append('<p>Tid: Tid ska in på varje rad för varje användare</p>');
 		});
 
 	}

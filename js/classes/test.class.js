@@ -96,19 +96,19 @@ class Test extends Base {
 				console.log('if 3');
 				grade = 'vg';
 			}
-			console.log("seconds at submit: " + this.seconds);
+
+			clearInterval(this.set);
 			var hours = Math.floor(this.seconds / 3600);
 			this.seconds %= 3600;
 			var minutes = Math.floor(this.seconds / 60);
 			var seconds = this.seconds % 60;
-
-			console.log(hours, minutes, seconds);
 			var time = hours + ':' + minutes + ':' + seconds;
-			this.insertGrade(autoCorr.length, grade, time);
+
+			this.insertGrade(grade, autoCorr.length, time);
 		});
 	}
 
-	insertGrade(points, grade, time, callback) {
+	insertGrade(grade, points, time, callback) {
 		this.db.insertGrade({
 			user_userId: window.user,
 			grade: grade,
