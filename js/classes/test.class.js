@@ -93,7 +93,9 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
 	insertGrade(grade, callback) {
 		this.db.insertGrade({
 			user_userId: window.user,
-			grade: grade
+			grade: grade,
+			points: 0,
+			time: 'no time'
 		}, callback);
 	}
 
@@ -103,7 +105,7 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
     			INSERT user_answers_alternative SET ?
      		`,
 			insertGrade: `
-    			INSERT grade SET ?
+    			INSERT result SET ?
      		`
 
 		}
