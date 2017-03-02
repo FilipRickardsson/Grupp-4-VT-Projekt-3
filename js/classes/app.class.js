@@ -1,9 +1,9 @@
 class App {
 
 	constructor() {
-//		var user = 'bob@student.com';
-//		var user = 'jane@student.com';
-		var user = 'john@teacher.com';
+		var user = 'bob@student.com';
+		//		var user = 'jane@student.com';
+		//		var user = 'john@teacher.com';
 
 		window.user = user;
 
@@ -17,8 +17,7 @@ class App {
 				} else {
 					new ResultView();
 				}
-			}
-			else {
+			} else {
 				var userUnknown = new UserUnknown();
 				userUnknown.display('#content');
 			}
@@ -37,6 +36,6 @@ class App {
 
 		var footer = new Footer();
 		footer.display('body');
-		
+
 	}
 }
