@@ -2,7 +2,7 @@ class Test extends Base {
 
 	constructor(propertyValues) {
 		super(propertyValues);
-        
+
 		$("#content").empty();
 		var questionList = new QuestionList();
 		this.questionList = questionList;
@@ -26,8 +26,17 @@ class Test extends Base {
 
 					alternativeList.readAllAlternatives(() => {
 						this.showQuestion();
-						
+
 					});
+					var self = this;
+					self.seconds = 0;
+					self.set = setInterval(function () {
+						self.seconds++;
+						console.log(self.seconds);
+					}, 1000);
+
+
+
 
 				});
 
@@ -59,7 +68,9 @@ class Test extends Base {
 		buttons.nbrOfQuestions = this.questionList.length;
 		buttons.test = this;
 		buttons.display('#content');
-$(()=>{buttons.setVisibility(this.currentQuestion);});
+		$(() => {
+			buttons.setVisibility(this.currentQuestion);
+		});
 
 	}
 
@@ -85,17 +96,27 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
 				console.log('if 3');
 				grade = 'vg';
 			}
+			console.log("seconds at submit: " + this.seconds);
+			var hours = Math.floor(this.seconds / 3600);
+			this.seconds %= 3600;
+			var minutes = Math.floor(this.seconds / 60);
+			var seconds = this.seconds % 60;
 
-			this.insertGrade(grade);
+			console.log(hours, minutes, seconds);
+			var time = hours + ':' + minutes + ':' + seconds;
+			this.insertGrade(autoCorr.length, grade, time);
 		});
 	}
 
-	insertGrade(grade, callback) {
+	insertGrade(points, grade, time, callback) {
 		this.db.insertGrade({
 			user_userId: window.user,
-			grade: grade
+			grade: grade,
+			points: points,
+			time: time
 		}, callback);
 	}
+
 
 	static get sqlQueries() {
 		return {
@@ -103,9 +124,8 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
     			INSERT user_answers_alternative SET ?
      		`,
 			insertGrade: `
-    			INSERT grade SET ?
+    			INSERT result SET ?
      		`
-
 		}
 
 	}
