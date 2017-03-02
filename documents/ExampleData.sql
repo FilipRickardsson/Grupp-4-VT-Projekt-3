@@ -18,7 +18,38 @@ INSERT	INTO	user	VALUES	('werner@student.com',	'Werner',	'Abrahamsson',	's',	'Cl
 INSERT	INTO	user	VALUES	('august@student.com',	'August',	'Strindberg','s', 	'Class3');	
 INSERT	INTO	user	VALUES	('fatima@teacher.com',	'Fatima',	'Rashid',	't',	'Class3');
 
+/*Tests*/ 
+
+INSERT INTO test VALUES ('1', 'aa');
+INSERT INTO test VALUES ('2', 'bb');
+INSERT INTO test VALUES ('3', 'cc');
+
+/* class has test*/
+
+INSERT INTO class_has_test (class_className, test_testId) VALUES ('Class1', '1');
+INSERT INTO class_has_test (class_className, test_testId) VALUES ('Class2', '2');
+INSERT INTO class_has_test (class_className, test_testId) VALUES ('Class3', '3');
+
+/* question */
+
+INSERT INTO question (text, questionId) VALUES ('What is 1 + 1?', '1');
+INSERT INTO question (text, questionId) VALUES ('In what county is Malmö?', '2');
+INSERT INTO question (text, questionId) VALUES ('Is pizza the best thing ever?', '3');
+INSERT INTO question (text, questionId) VALUES ('Do you like coding?', '4');
+INSERT INTO question (text, questionId) VALUES ('Surname of Isaac?', '5');
+INSERT INTO question (text, questionId) VALUES ('What is color black?', '6');
+INSERT INTO question (text, questionId) VALUES ('What is color white?', '7');
+INSERT INTO question (text, questionId) VALUES ('What animal is Donald?', '8');
+INSERT INTO question (text, questionId) VALUES ('Who is Luke Skywalkers father?', '9');
+INSERT INTO question (text, questionId) VALUES ('How many legs does a chair have?', '10');
+INSERT INTO question (text, questionId) VALUES ('Who is Clark Kent really?', '11');
+INSERT INTO question (text, questionId) VALUES ('What is the difference between an array and an arrayList in Java?', '12');
+INSERT INTO question (text, questionId) VALUES ('How do you save data for use while the program is running?', '13');
+INSERT INTO question (text, questionId) VALUES ('What keyword do you use to create a new object in Java?', '14');
+INSERT INTO question (text, questionId) VALUES ('What date is new years eve?', '15');
+
 /*Test has Question*/
+
 INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	1'	)	;
 INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	2'	)	;
 INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	1'	,'	3'	)	;
@@ -35,29 +66,7 @@ INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'
 INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'	,'	14'	)	;
 INSERT	INTO	test_has_question	(	test_testId	,	question_questionId	)	VALUES	('	3'	,'	15'	)	;
 
-
-
-/* Questions */
-
-INSERT INTO question (text, class_classname) VALUES ('What is 1 + 1?', 'Class1', '1');
-INSERT INTO question (text, class_classname) VALUES ('In what county is Malmö?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('Is pizza the best thing ever?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('Do you like coding?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('Surname of Isaac?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('What is color black?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('What is color white?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('What animal is Donald?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('Who is Luke Skywalkers father?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('How many legs does a chair have?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('Who is Clark Kent really?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('What is the difference between an array and an arrayList in Java?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('How do you save data for use while the program is running?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('What keyword do you use to create a new object in Java?', 'Class1');
-INSERT INTO question (text, class_classname) VALUES ('What date is new years eve?', 'Class1');
-
-/* Options */
-
-INSERT INTO alternative (alternative, correct) VALUES ('none', false);
+/* alternative */
 
 INSERT INTO alternative (alternative, correct) VALUES ('1', false);
 INSERT INTO alternative (alternative, correct) VALUES ('2', true);
@@ -117,68 +126,67 @@ INSERT INTO alternative (alternative, correct) VALUES ('1 JAN', false);
 INSERT INTO alternative (alternative, correct) VALUES ('31 DEC', true);
 INSERT INTO alternative (alternative, correct) VALUES ('24 DEC', false);
 
-/* Link questions to options */
+/* questions has alternative */
 
+INSERT INTO question_has_alternative VALUES ('1',' 1');				
 INSERT INTO question_has_alternative VALUES ('1',' 2');				
 INSERT INTO question_has_alternative VALUES ('1',' 3');				
-INSERT INTO question_has_alternative VALUES ('1',' 4');				
 				
+INSERT INTO question_has_alternative VALUES ('2',' 4');				
 INSERT INTO question_has_alternative VALUES ('2',' 5');				
 INSERT INTO question_has_alternative VALUES ('2',' 6');				
-INSERT INTO question_has_alternative VALUES ('2',' 7');				
 				
+INSERT INTO question_has_alternative VALUES ('3',' 7');				
 INSERT INTO question_has_alternative VALUES ('3',' 8');				
-INSERT INTO question_has_alternative VALUES ('3',' 9');				
 				
+INSERT INTO question_has_alternative VALUES ('4',' 9');				
 INSERT INTO question_has_alternative VALUES ('4',' 10');				
-INSERT INTO question_has_alternative VALUES ('4',' 11');				
 				
+INSERT INTO question_has_alternative VALUES ('5',' 11');				
 INSERT INTO question_has_alternative VALUES ('5',' 12');				
 INSERT INTO question_has_alternative VALUES ('5',' 13');				
-INSERT INTO question_has_alternative VALUES ('5',' 14');				
 				
+INSERT INTO question_has_alternative VALUES ('6',' 14');				
 INSERT INTO question_has_alternative VALUES ('6',' 15');				
 INSERT INTO question_has_alternative VALUES ('6',' 16');				
-INSERT INTO question_has_alternative VALUES ('6',' 17');				
 				
+INSERT INTO question_has_alternative VALUES ('7',' 17');				
 INSERT INTO question_has_alternative VALUES ('7',' 18');				
 INSERT INTO question_has_alternative VALUES ('7',' 19');				
-INSERT INTO question_has_alternative VALUES ('7',' 20');				
 				
+INSERT INTO question_has_alternative VALUES ('8',' 20');				
 INSERT INTO question_has_alternative VALUES ('8',' 21');				
 INSERT INTO question_has_alternative VALUES ('8',' 22');				
-INSERT INTO question_has_alternative VALUES ('8',' 23');				
 				
+INSERT INTO question_has_alternative VALUES ('9',' 23');				
 INSERT INTO question_has_alternative VALUES ('9',' 24');				
 INSERT INTO question_has_alternative VALUES ('9',' 25');				
-INSERT INTO question_has_alternative VALUES ('9',' 26');				
 				
+INSERT INTO question_has_alternative VALUES ('10',' 26');				
 INSERT INTO question_has_alternative VALUES ('10',' 27');				
 INSERT INTO question_has_alternative VALUES ('10',' 28');				
-INSERT INTO question_has_alternative VALUES ('10',' 29');				
 				
+INSERT INTO question_has_alternative VALUES ('11',' 29');				
 INSERT INTO question_has_alternative VALUES ('11',' 30');				
 INSERT INTO question_has_alternative VALUES ('11',' 31');				
-INSERT INTO question_has_alternative VALUES ('11',' 32');				
 				
+INSERT INTO question_has_alternative VALUES ('12',' 32');				
 INSERT INTO question_has_alternative VALUES ('12',' 33');				
 INSERT INTO question_has_alternative VALUES ('12',' 34');				
-INSERT INTO question_has_alternative VALUES ('12',' 35');				
 				
+INSERT INTO question_has_alternative VALUES ('13',' 35');				
 INSERT INTO question_has_alternative VALUES ('13',' 36');				
 INSERT INTO question_has_alternative VALUES ('13',' 37');				
-INSERT INTO question_has_alternative VALUES ('13',' 38');				
 				
+INSERT INTO question_has_alternative VALUES ('14',' 38');				
 INSERT INTO question_has_alternative VALUES ('14',' 39');				
 INSERT INTO question_has_alternative VALUES ('14',' 40');				
-INSERT INTO question_has_alternative VALUES ('14',' 41');				
 				
+INSERT INTO question_has_alternative VALUES ('15',' 41');				
 INSERT INTO question_has_alternative VALUES ('15',' 42');				
 INSERT INTO question_has_alternative VALUES ('15',' 43');				
-INSERT INTO question_has_alternative VALUES ('15',' 44');				
 
-
-/* Alternatives answered by students */				
+/* user answers alternative */				
 				
 INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 3');				
 INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 6');				
@@ -195,8 +203,6 @@ INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 33');
 INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 36');				
 INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 39');				
 INSERT INTO user_answers_alternative VALUES ('bob@student.com',' 42');				
-
-
 
 /* Grades */
 
