@@ -5,7 +5,7 @@ class CorrectAnswerList extends List {
 	}
 
 	readCorrectAnswers(callback) {
-		this.db.autoCorrect([window.user], (data) => {
+		this.db.autoCorrect([user], (data) => {
 			this.push.apply(this, data);
 			callback();
 		});

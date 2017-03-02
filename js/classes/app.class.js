@@ -1,14 +1,7 @@
 class App {
 
 	constructor() {
-		var user = 'bob@student.com';
-//		var user = 'jane@student.com';
-//		var user = 'john@teacher.com';
-
-		window.user = user;
-
-		console.log('start');
-
+		
 		var login = new UserList();
 		login.login(() => {
 			if (login.length > 0) {
@@ -31,6 +24,6 @@ class App {
 
 		var footer = new Footer();
 		footer.display('body');
-
+		
 	}
 }
