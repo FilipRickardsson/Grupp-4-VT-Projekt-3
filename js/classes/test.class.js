@@ -28,10 +28,7 @@ class Test extends Base {
 						this.showQuestion();
 
 					});
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 					var self = this;
 					self.seconds = 0;
 					self.set = setInterval(function () {
@@ -106,12 +103,6 @@ class Test extends Base {
 			this.seconds %= 3600;
 			var minutes = Math.floor(this.seconds / 60);
 			var seconds = this.seconds % 60;
-<<<<<<< Updated upstream
-=======
-
-			console.log(hours, minutes, seconds);
-			console.log('grade', grade);
->>>>>>> Stashed changes
 			var time = hours + ':' + minutes + ':' + seconds;
 
 			this.insertGrade(grade, autoCorr.length, time);

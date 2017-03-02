@@ -43,8 +43,6 @@ window.load = `
       correctAnswer-list.class.js
       correctAnswer.class.js
 		app.class.js
-		correctAnswer-list.class.js
-		correctAnswer.class.js        
 
 	templates/
 		bootstrap-size.html		
