@@ -7,7 +7,6 @@ class ResultList extends List {
 	readAllResult(callback) {
 		this.db.readAllResult((data) => {
 			this.push.apply(this, data);
-			console.log(data);
 			callback();
 		});
 	}
@@ -15,8 +14,8 @@ class ResultList extends List {
 	static get sqlQueries() {
 		return {
 			readAllResult: `
-        SELECT * FROM result
-      `
+				SELECT * FROM result
+      	`
 		}
 	}
 

@@ -1,7 +1,7 @@
 class Footer extends Base {
 
-  constructor(propertyValues){
-    super(propertyValues);
-  }
+	constructor(propertyValues) {
+		super(propertyValues);
+	}
 
 }

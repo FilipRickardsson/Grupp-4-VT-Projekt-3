@@ -7,7 +7,6 @@ class ResultView extends Base {
 		var resultList = new ResultList();
 
 		resultList.readAllResult(() => {
-			console.log("Read from DB", resultList);
 			resultList.display('#content');
 
 			var ig = 0;
@@ -16,7 +15,6 @@ class ResultView extends Base {
 			var sum = 0;
 
 			for (var result of resultList) {
-				console.log('Grade', result);
 				if (result.grade == 'ig') {
 					ig++;
 				} else if (result.grade == 'g') {

@@ -35,12 +35,7 @@ class Test extends Base {
 						self.seconds++;
 						console.log(self.seconds);
 					}, 1000);
-
-
-
-
 				});
-
 			}
 		});
 
@@ -50,7 +45,7 @@ class Test extends Base {
 		for (let i = 0; i < this.answers.length; i++) {
 			this.db.insertAnswer({
 				user_userId: window.user,
-				alternative_optionId: this.answers[i]
+				alternative_alternativeId: this.answers[i]
 			}, callback);
 		}
 	}

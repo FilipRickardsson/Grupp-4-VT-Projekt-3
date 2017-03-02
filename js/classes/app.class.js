@@ -23,11 +23,6 @@ class App {
 			}
 		});
 
-
-		// Development tool
-		var bootstrapSizeTool = new BootstrapSize();
-		bootstrapSizeTool.display('body');
-
 		var header = new Header();
 		header.display('body');
 

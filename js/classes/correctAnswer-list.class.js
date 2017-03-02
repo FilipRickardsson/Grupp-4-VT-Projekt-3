@@ -5,8 +5,7 @@ class CorrectAnswerList extends List {
 	}
 
 	readCorrectAnswers(callback) {
-
-		this.db.autoCorrect((data) => {
+		this.db.autoCorrect([window.user], (data) => {
 			this.push.apply(this, data);
 			callback();
 		});
@@ -18,10 +17,10 @@ class CorrectAnswerList extends List {
 				SELECT *
 				FROM user_answers_alternative
 				JOIN alternative
-				ON alternative_optionId = alternativeId
-				WHERE user_userId = 'bob@student.com' AND correct = 1
-      		`
+				ON alternative_alternativeId = alternativeId
+				WHERE user_userId = ? AND correct = 1
+      	`
 		}
-
 	}
+
 }
