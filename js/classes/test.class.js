@@ -30,7 +30,7 @@ class Test extends Base {
 				});
 			}
 		});
-		
+
 	}
 
 	populateAnswers() {
@@ -85,15 +85,16 @@ class Test extends Base {
 			var g = Math.floor(this.questionList.length * 0.5);
 			var vg = Math.floor(this.questionList.length * 0.75);
 			var grade;
+			var result = [];
 
 			console.log('Points length:', points.length);
 
 			if (points.length < g) {
-				grade = 'ig';
+				grade = 'IG';
 			} else if (points.length >= g && points.length < vg) {
-				grade = 'g';
+				grade = 'G';
 			} else {
-				grade = 'vg';
+				grade = 'VG';
 			}
 
 			clearInterval(this.set);
@@ -103,7 +104,15 @@ class Test extends Base {
 			var seconds = this.seconds % 60;
 			var time = hours + ':' + minutes + ':' + seconds;
 
+			result.push(grade);
+			result.push(points.length);
+			result.push(time);
+
 			this.insertGrade(grade, points.length, time);
+
+			$('.jumbotron').append('<p>Grade: ' + grade + ' </p>');
+			$('.jumbotron').append('<p>Points: ' + points.length + '</p>');
+			$('.jumbotron').append('<p>Time: ' + time + '</p>');
 		});
 	}
 
