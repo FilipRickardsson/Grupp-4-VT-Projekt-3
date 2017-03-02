@@ -17,6 +17,10 @@ class Test extends Base {
 		checkResult.checkResult(() => {
 			if (checkResult.length > 0) {
 				var userDenied = new UserDenied();
+				userDenied.grade = checkResult[0].grade;
+				userDenied.points = checkResult[0].points;
+				userDenied.time = checkResult[0].time;
+				
 				userDenied.display('#content');
 			} else {
 				questionList.readAllQuestions(() => {

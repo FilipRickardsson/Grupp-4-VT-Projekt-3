@@ -1,5 +1,8 @@
 UserDenied.addTemplate('default', function(){return `
 <div class="jumbotron">
 	<h1>You already did this test!</h1>
+	<p>Grade: ${this.grade}</p>
+	<p>Points: ${this.points}</p>
+	<p>Time: ${this.time}</p>
 </div>
 `});

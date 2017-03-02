@@ -30,7 +30,7 @@ class UserList extends List {
 			`,
 
 			checkResult: `
-        		SELECT * FROM user_answers_alternative WHERE ?
+        		SELECT * FROM result WHERE ?
 			`
 		}
 	}
