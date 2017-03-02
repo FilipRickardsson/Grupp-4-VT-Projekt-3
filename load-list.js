@@ -30,6 +30,7 @@ window.load = `
 		result.class.js
 		result-list.class.js
 		buttons.class.js
+        modal.class.js
 		header.class.js
 		content.class.js
 		footer.class.js
@@ -46,6 +47,7 @@ window.load = `
 
 	templates/
 		bootstrap-size.html
+        modal.html
 		question.html
 		result.html
 		alternative.html

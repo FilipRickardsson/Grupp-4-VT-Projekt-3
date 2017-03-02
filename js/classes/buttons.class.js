@@ -52,6 +52,7 @@ class Buttons extends Base {
 
 		var thanks = new Thanks();
 		$('#content').empty();
+		$('#myModal').display();
 		thanks.display('#content');
 
 		this.test.autoCorrect();
