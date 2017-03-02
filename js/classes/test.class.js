@@ -20,7 +20,7 @@ class Test extends Base {
 				userDenied.grade = checkResult[0].grade;
 				userDenied.points = checkResult[0].points;
 				userDenied.time = checkResult[0].time;
-				
+
 				userDenied.display('#content');
 			} else {
 				questionList.readAllQuestions(() => {
@@ -50,7 +50,7 @@ class Test extends Base {
 		self.set = setInterval(function () {
 			self.seconds++;
 			console.log(self.seconds);
-		}, 1000);
+		}, 100);
 	}
 
 	insertAnswers(callback) {
@@ -89,7 +89,6 @@ class Test extends Base {
 			var g = Math.floor(this.questionList.length * 0.5);
 			var vg = Math.floor(this.questionList.length * 0.75);
 			var grade;
-			var result = [];
 
 			console.log('Points length:', points.length);
 
@@ -106,11 +105,23 @@ class Test extends Base {
 			this.seconds %= 3600;
 			var minutes = Math.floor(this.seconds / 60);
 			var seconds = this.seconds % 60;
-			var time = hours + ':' + minutes + ':' + seconds;
 
-			result.push(grade);
-			result.push(points.length);
-			result.push(time);
+			var time = '';
+
+			if (hours < 10) {
+				time = time + '0';
+			}
+			time = time + hours + ':';
+			
+			if (minutes < 10) {
+				time = time + '0';
+			}
+			time = time + minutes + ':';
+
+			if (seconds < 10) {
+				time = time + '0';
+			}
+			time = time + seconds;
 
 			this.insertGrade(grade, points.length, time);
 
