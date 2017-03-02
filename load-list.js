@@ -42,6 +42,7 @@ window.load = `
 		thanks.class.js
       correctAnswer-list.class.js
       correctAnswer.class.js
+		statistics.class.js
 		app.class.js
 
 	templates/
@@ -55,8 +56,8 @@ window.load = `
 		footer.html
 		user-denied.html
 		user-unknown.html
+		statistics.html
 		thanks.html
-		
 
 	js/main.js
 

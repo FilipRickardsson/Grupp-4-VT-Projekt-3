@@ -7,7 +7,6 @@ class AlternativeList extends List {
 	readAllAlternatives(callback) {
 		this.db.readAllAlternatives((data) => {
 			this.push.apply(this, data);
-			//console.log(data);
 			callback();
 		});
 	}

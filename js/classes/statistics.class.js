@@ -1,4 +1,4 @@
-class Result extends Base {
+class Statistics extends Base {
 
 	constructor(propertyValues = {}) {
 		super(propertyValues);

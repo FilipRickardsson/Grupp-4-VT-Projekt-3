@@ -4,6 +4,7 @@ class Test extends Base {
 		super(propertyValues);
 
 		$("#content").empty();
+
 		var questionList = new QuestionList();
 		this.questionList = questionList;
 		var alternativeList = new AlternativeList();
@@ -12,45 +13,51 @@ class Test extends Base {
 		this.currentQuestion = 0;
 		this.answers = [];
 
-		var checkGrade = new UserList();
-		checkGrade.checkGrade(() => {
-			if (checkGrade.length > 0) {
+		var checkResult = new UserList();
+		checkResult.checkResult(() => {
+			if (checkResult.length > 0) {
 				var userDenied = new UserDenied();
+				userDenied.grade = checkResult[0].grade;
+				userDenied.points = checkResult[0].points;
+				userDenied.time = checkResult[0].time;
+
 				userDenied.display('#content');
 			} else {
 				questionList.readAllQuestions(() => {
-					for (var question of this.questionList) {
-						question.nbrOfQuestions = this.questionList.length;
-						this.answers.push(1);
-					}
+					this.populateAnswers();
 
 					alternativeList.readAllAlternatives(() => {
 						this.showQuestion();
-
+						this.startTimer();
 					});
 
-					var self = this;
-					self.seconds = 0;
-					self.set = setInterval(function () {
-						self.seconds++;
-						console.log(self.seconds);
-					}, 1000);
-
-
-
-
 				});
-
 			}
 		});
 
 	}
 
+	populateAnswers() {
+		for (var question of this.questionList) {
+			question.nbrOfQuestions = this.questionList.length;
+			this.answers.push(-1);
+		}
+	}
+
+	startTimer() {
+		var self = this;
+		self.seconds = 0;
+		self.set = setInterval(function () {
+			self.seconds++;
+			console.log(self.seconds);
+		}, 100);
+	}
+
 	insertAnswers(callback) {
 		for (let i = 0; i < this.answers.length; i++) {
 			this.db.insertAnswer({
-				user_userId: window.user,
-				alternative_optionId: this.answers[i]
+				user_userId: user,
+				alternative_alternativeId: this.answers[i]
 			}, callback);
 		}
 	}
@@ -76,26 +83,21 @@ class Test extends Base {
 	}
 
 	autoCorrect() {
-		var autoCorr = new CorrectAnswerList();
+		var points = new CorrectAnswerList();
 
-		autoCorr.readCorrectAnswers(() => {
+		points.readCorrectAnswers(() => {
 			var g = Math.floor(this.questionList.length * 0.5);
 			var vg = Math.floor(this.questionList.length * 0.75);
 			var grade;
 
-			console.log('g', g);
-			console.log('vg', vg);
-			console.log('AutoCorr length:', autoCorr.length);
+			console.log('Points length:', points.length);
 
-			if (autoCorr.length < g) {
-				console.log('if 1');
-				grade = 'ig';
-			} else if (autoCorr.length >= g && autoCorr.length < vg) {
-				console.log('if 2');
-				grade = 'g';
+			if (points.length < g) {
+				grade = 'IG';
+			} else if (points.length >= g && points.length < vg) {
+				grade = 'G';
 			} else {
-				console.log('if 3');
-				grade = 'vg';
+				grade = 'VG';
 			}
 
 			clearInterval(this.set);
@@ -103,15 +105,35 @@ class Test extends Base {
 			this.seconds %= 3600;
 			var minutes = Math.floor(this.seconds / 60);
 			var seconds = this.seconds % 60;
-			var time = hours + ':' + minutes + ':' + seconds;
 
-			this.insertGrade(grade, autoCorr.length, time);
+			var time = '';
+
+			if (hours < 10) {
+				time = time + '0';
+			}
+			time = time + hours + ':';
+			
+			if (minutes < 10) {
+				time = time + '0';
+			}
+			time = time + minutes + ':';
+
+			if (seconds < 10) {
+				time = time + '0';
+			}
+			time = time + seconds;
+
+			this.insertGrade(grade, points.length, time);
+
+			$('.jumbotron').append('<p>Grade: ' + grade + ' </p>');
+			$('.jumbotron').append('<p>Points: ' + points.length + '</p>');
+			$('.jumbotron').append('<p>Time: ' + time + '</p>');
 		});
 	}
 
 	insertGrade(grade, points, time, callback) {
 		this.db.insertGrade({
-			user_userId: window.user,
+			user_userId: user,
 			grade: grade,
 			points: points,
 			time: time

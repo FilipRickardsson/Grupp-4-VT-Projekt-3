@@ -6,16 +6,16 @@ class UserList extends List {
 
 	login(callback) {
 		this.db.login({
-			userId: window.user
+			userId: user
 		}, (data) => {
 			this.push.apply(this, data);
 			callback();
 		});
 	}
 
-	checkGrade(callback) {
-		this.db.checkGrade({
-			user_userId: window.user
+	checkResult(callback) {
+		this.db.checkResult({
+			user_userId: user
 		}, (data) => {
 			this.push.apply(this, data);
 			callback();
@@ -26,15 +26,11 @@ class UserList extends List {
 	static get sqlQueries() {
 		return {
 			login: `
-        	SELECT *
-			FROM user
-			WHERE ?
+        		SELECT * FROM user WHERE ?
 			`,
 
-			checkGrade: `
-        	SELECT *
-			FROM user_answers_alternative
-			WHERE ?
+			checkResult: `
+        		SELECT * FROM result WHERE ?
 			`
 		}
 	}

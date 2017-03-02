@@ -7,7 +7,6 @@ class ResultView extends Base {
 		var resultList = new ResultList();
 
 		resultList.readAllResult(() => {
-			console.log("Read from DB", resultList);
 			resultList.display('#content');
 
 			var ig = 0;
@@ -16,7 +15,6 @@ class ResultView extends Base {
 			var sum = 0;
 
 			for (var result of resultList) {
-				console.log('Grade', result);
 				if (result.grade == 'ig') {
 					ig++;
 				} else if (result.grade == 'g') {
@@ -28,12 +26,13 @@ class ResultView extends Base {
 			}
 
 			var avg = sum / resultList.length;
-
-			$('#content').append('<p>IG: ' + ig + '</p>');
-			$('#content').append('<p>G: ' + g + '</p>');
-			$('#content').append('<p>VG: ' + vg + '</p>');
-
-			$('#content').append('<p>Average: ' + avg + '</p>');
+			
+			var statistics = new Statistics();
+			statistics.ig = ig;
+			statistics.g = g;
+			statistics.vg = vg;
+			statistics.avg = avg;
+			statistics.display('#content');
 		});
 
 	}

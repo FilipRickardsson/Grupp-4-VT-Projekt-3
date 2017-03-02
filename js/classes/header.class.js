@@ -1,7 +1,7 @@
 class Header extends Base {
 
-  constructor(propertyValues){
-    super(propertyValues);
-  }
+	constructor(propertyValues) {
+		super(propertyValues);
+	}
 
 }
