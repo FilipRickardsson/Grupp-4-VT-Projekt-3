@@ -13,6 +13,7 @@ class ResultView extends Base {
 			var ig = 0;
 			var g = 0;
 			var vg = 0;
+			var sum = 0;
 
 			for (var result of resultList) {
 				console.log('Grade', result);
@@ -23,14 +24,16 @@ class ResultView extends Base {
 				} else {
 					vg++;
 				}
+				sum += result.points;
 			}
-			
+
+			var avg = sum / resultList.length;
+
 			$('#content').append('<p>IG: ' + ig + '</p>');
 			$('#content').append('<p>G: ' + g + '</p>');
 			$('#content').append('<p>VG: ' + vg + '</p>');
 
-			$('#content').append('<p>Average: ska in sen här ja</p>');
-			$('#content').append('<p>Tid: Tid ska in på varje rad för varje användare</p>');
+			$('#content').append('<p>Average: ' + avg + '</p>');
 		});
 
 	}
