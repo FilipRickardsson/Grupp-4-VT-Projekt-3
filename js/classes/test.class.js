@@ -2,7 +2,7 @@ class Test extends Base {
 
 	constructor(propertyValues) {
 		super(propertyValues);
-        
+
 		$("#content").empty();
 		var questionList = new QuestionList();
 		this.questionList = questionList;
@@ -26,7 +26,16 @@ class Test extends Base {
 
 					alternativeList.readAllAlternatives(() => {
 						this.showQuestion();
-						
+
+						var self = this;
+						self.seconds = 0;
+						self.set = setInterval(function () {
+							self.seconds++;
+							console.log(self.seconds);
+						}, 1000);
+
+						this.self = self;
+
 					});
 
 				});
@@ -59,7 +68,9 @@ class Test extends Base {
 		buttons.nbrOfQuestions = this.questionList.length;
 		buttons.test = this;
 		buttons.display('#content');
-$(()=>{buttons.setVisibility(this.currentQuestion);});
+		$(() => {
+			buttons.setVisibility(this.currentQuestion);
+		});
 
 	}
 
@@ -86,16 +97,23 @@ $(()=>{buttons.setVisibility(this.currentQuestion);});
 				grade = 'vg';
 			}
 
-			this.insertGrade(grade);
+			clearInterval(this.set);
+			var hours = Math.floor(this.seconds / 3600);
+			this.seconds %= 3600;
+			var minutes = Math.floor(this.seconds / 60);
+			var seconds = this.seconds % 60;
+			var time = hours + ':' + minutes + ':' + seconds;
+
+			this.insertGrade(grade, autoCorr.length, time);
 		});
 	}
 
-	insertGrade(grade, callback) {
+	insertGrade(grade, points, time, callback) {
 		this.db.insertGrade({
 			user_userId: window.user,
 			grade: grade,
-			points: 0,
-			time: 'no time'
+			points: points,
+			time: time
 		}, callback);
 	}
 
