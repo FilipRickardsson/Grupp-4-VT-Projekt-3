@@ -1,7 +1,33 @@
 Buttons.addTemplate('default', function(){return `
 <div>
-	<button id="btnPrev" data-click="prev" type="button" class="btn btn-default"> Back</button>
-	<button data-click="submit" type="button" class="btn btn-default">Submit test</button>
-	<button id="btnNext" data-click="next" type="button" class="btn btn-default">Next</button>
+
+	<!-- Modal -->
+	<div id="myModal" data-backdrop="false" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Confirm submission</h4>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to submit?</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button data-click="tjo" type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<div>
+		<button id="btnPrev" data-click="prev" type="button" class="btn btn-default"> Back</button>
+		<button data-toggle="modal" data-target="#myModal" type="button" class="btn btn-default">Submit test</button>
+		<button id="btnNext" data-click="next" type="button" class="btn btn-default">Next</button>
+	</div>
+
 </div>
 `}) ;

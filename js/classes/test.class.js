@@ -9,6 +9,10 @@ class Test extends Base {
 		this.questionList = questionList;
 		var alternativeList = new AlternativeList();
 		this.alternativeList = alternativeList;
+		
+		var confirmBox = new ConfirmBox();
+		confirmBox.display("#content");
+		this.confirmBox = confirmBox;
 
 		this.currentQuestion = 0;
 		this.answers = [];

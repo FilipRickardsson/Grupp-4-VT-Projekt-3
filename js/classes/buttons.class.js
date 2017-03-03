@@ -40,6 +40,8 @@ class Buttons extends Base {
 	}
 
 	submit() {
+		console.log('tjo');
+
 		var answer = $("input[type=radio][name=radio-button]:checked").val();
 		this.test.answers[this.test.currentQuestion] = answer;
 
@@ -51,6 +53,11 @@ class Buttons extends Base {
 
 		var result = this.test.autoCorrect();
 		console.log('result', result);
+	}
+	
+	tjo() {
+		$('#myModal').remove();
+		this.submit();
 	}
 
 }
