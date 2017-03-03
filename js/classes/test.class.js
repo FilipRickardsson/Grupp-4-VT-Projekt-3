@@ -49,7 +49,6 @@ class Test extends Base {
 		self.seconds = 0;
 		self.set = setInterval(function () {
 			self.seconds++;
-			console.log(self.seconds);
 		}, 100);
 	}
 
@@ -125,9 +124,9 @@ class Test extends Base {
 
 			this.insertGrade(grade, points.length, time);
 
-			$('.jumbotron').append('<p>Grade: ' + grade + ' </p>');
-			$('.jumbotron').append('<p>Points: ' + points.length + '</p>');
-			$('.jumbotron').append('<p>Time: ' + time + '</p>');
+			$('.message').append('<p>Grade: ' + grade + ' </p>');
+			$('.message').append('<p>Points: ' + points.length + '</p>');
+			$('.message').append('<p>Time: ' + time + '</p>');
 		});
 	}
 
