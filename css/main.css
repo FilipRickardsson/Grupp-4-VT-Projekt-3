@@ -2,6 +2,22 @@
 
 .footer {
 	margin-top: 50px;
+	height: 100px;
+	background-image: url("http://www.newton.se/shared/2016/03/4E9A6407.jpg" );
+	background-size: cover;
+	background-position: 0% 75%;
+	border-color:#d34615;
+	
+}
+
+@media (max-width:767px){
+	.footer {
+	margin-top: 50px;
+	height: 70px;
+	background-image: url("http://www.newton.se/shared/2016/03/4E9A6407.jpg" );
+	background-size: cover;
+	background-position: 0% 95%;
+	border-color:#d34615;
 }
 
 .navbar {
