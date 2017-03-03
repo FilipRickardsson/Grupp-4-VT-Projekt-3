@@ -19,3 +19,7 @@
 .btn:hover:disabled {
 	background-color: #e95420;
 }
+
+label {
+	font-weight: normal;
+}
