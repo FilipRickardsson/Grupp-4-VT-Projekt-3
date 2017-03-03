@@ -1,5 +1,21 @@
-/* Add your own css */
+*/* Add your own css */
 
 .footer {
 	margin-top: 50px;
+}
+
+.navbar {
+	border-radius: 0;
+}
+
+.btn {
+	background-color: #e95420;
+}
+
+.btn:hover {
+	background-color: #d13600;
+}
+
+.btn:hover:disabled {
+	background-color: #e95420;
 }

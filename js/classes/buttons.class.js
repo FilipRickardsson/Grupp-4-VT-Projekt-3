@@ -2,19 +2,19 @@ class Buttons extends Base {
 
 	constructor(propertyValues = {}) {
 		super(propertyValues);
-		$('#btnBack').hide();
+		$('#btnPrev').hide();
 		$('#btnNext').hide();
 	}
 
 	setVisibility(currentQuestion) {
 		if (currentQuestion == 0) {
-			$('#btnBack').prop('disabled', true);
+			$('#btnPrev').prop('disabled', true);
 			$('#btnNext').prop('disabled', false);
 		} else if (currentQuestion == this.nbrOfQuestions - 1) {
-			$('#btnBack').prop('disabled', false);
+			$('#btnPrev').prop('disabled', false);
 			$('#btnNext').prop('disabled', true);
 		} else {
-			$('#btnBack').prop('disabled', false);
+			$('#btnPrev').prop('disabled', false);
 			$('#btnNext').prop('disabled', false);
 		}
 	}
