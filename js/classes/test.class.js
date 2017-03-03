@@ -50,7 +50,7 @@ class Test extends Base {
 		self.set = setInterval(function () {
 			self.seconds++;
 			console.log(self.seconds);
-		}, 100);
+		}, 1000);
 	}
 
 	insertAnswers(callback) {

@@ -2,7 +2,26 @@
 
 .footer {
 	margin-top: 50px;
+    background-image: url("http://www.newton.se/shared/2016/03/4E9A6407.jpg" );
+	background-size: cover;
+	background-position: 50% 75%;
+	border-color:#d34615
 }
+
+
+.navbar-brand>img{
+	display:block; 
+	height: 100%;
+	border: solid white;
+}
+
+.header{
+	background-image: url("http://www.newton.se/shared/2016/03/4E9A6407.jpg" );
+	background-size: cover;
+	background-position: top;
+	border-color:#d34615
+}
+
 
 .navbar {
 	border-radius: 0;
