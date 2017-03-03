@@ -1,5 +1,7 @@
 Alternative.addTemplate('default', function(){return `
-<p><input type="radio" name="radio-button" value="${this.alternative_alternativeId}"> ${this.alternative}</p>
+	<p>
+		<label>
+			<input type="radio" name="radio-button" value="${this.alternative_alternativeId}"> ${this.alternative}
+		</label>
+	</p>
 `});
-
-
