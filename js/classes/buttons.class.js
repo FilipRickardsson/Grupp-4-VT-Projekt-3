@@ -52,5 +52,5 @@ class Buttons extends Base {
 		var result = this.test.autoCorrect();
 		console.log('result', result);
 	}
-
+	
 }
