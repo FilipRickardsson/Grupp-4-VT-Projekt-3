@@ -9,6 +9,10 @@ h1 {
 	margin-top: 0;
 }
 
+h3 {
+	text-decoration: underline;
+}
+
 .navbar {
 	border-radius: 0;
 }

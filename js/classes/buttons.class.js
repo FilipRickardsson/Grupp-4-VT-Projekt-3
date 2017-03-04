@@ -40,14 +40,8 @@ class Buttons extends Base {
 
 	submit() {
 		this.collectAnswer();
-		
 		this.test.insertAnswers();
-
-		var thanks = new Thanks();
-		$('#content').empty();
-		thanks.display('#content');
-
-		var result = this.test.autoCorrect();
+		this.test.autoCorrect();
 	}
 
 	collectAnswer() {

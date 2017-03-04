@@ -17,11 +17,15 @@ class Test extends Base {
 		checkResult.checkResult(() => {
 			if (checkResult.length > 0) {
 				var userDenied = new UserDenied();
-				userDenied.grade = checkResult[0].grade;
-				userDenied.points = checkResult[0].points;
-				userDenied.time = checkResult[0].time;
-
-				userDenied.display('#content');
+				if (showResult) {
+					userDenied.grade = checkResult[0].grade;
+					userDenied.points = checkResult[0].points;
+					userDenied.time = checkResult[0].time;
+					userDenied.display('#content');
+				} else {
+					userDenied.display('#content');
+					$('#result').hide();
+				}
 			} else {
 				questionList.readAllQuestions(() => {
 					this.populateAnswers();
@@ -90,8 +94,6 @@ class Test extends Base {
 			var vg = Math.floor(this.questionList.length * 0.75);
 			var grade;
 
-			console.log('Points length:', points.length);
-
 			if (points.length < g) {
 				grade = 'IG';
 			} else if (points.length >= g && points.length < vg) {
@@ -125,9 +127,7 @@ class Test extends Base {
 
 			this.insertGrade(grade, points.length, time);
 
-			$('.message').append('<p>Grade: ' + grade + ' </p>');
-			$('.message').append('<p>Points: ' + points.length + '</p>');
-			$('.message').append('<p>Time: ' + time + '</p>');
+			this.showThanks(grade, points.length, time);
 		});
 	}
 
@@ -140,6 +140,22 @@ class Test extends Base {
 		}, callback);
 	}
 
+	showThanks(grade, points, time) {
+		var thanks = new Thanks();
+		if (showResult) {
+			thanks.grade = grade;
+			thanks.points = points;
+			thanks.time = time;
+
+		}
+
+		$('#content').empty();
+		thanks.display('#content');
+
+		if (!showResult) {
+			$('#result').hide();
+		}
+	}
 
 	static get sqlQueries() {
 		return {

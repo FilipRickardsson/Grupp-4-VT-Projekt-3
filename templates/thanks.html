@@ -1,5 +1,13 @@
 Thanks.addTemplate('default', function(){return `
 <div class="message">
 	<h1>Thank you for participating!</h1>
+
+	<div id="result">
+		<h3>Your result:</h3>
+
+		<p>Grade: ${this.grade}</p>
+		<p>Points: ${this.points}</p>
+		<p>Time: ${this.time}</p>
+	</div>
 </div>
 `});
