@@ -2,5 +2,9 @@ Question.addTemplate('default', function(){return `
 <div>
 	<h1>Question: ${this.questionId}/${this.nbrOfQuestions}</h1>
 	<p>${this.text}</p>
+	
+	<ul id="alternatives">
+	</ul>
+	
 </div>
 `});

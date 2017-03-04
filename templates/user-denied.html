@@ -5,9 +5,12 @@ UserDenied.addTemplate('default', function(){return `
 	<div id="result">
 		<h3>Your result:</h3>
 
-		<p>Grade: ${this.grade}</p>
-		<p>Points: ${this.points}</p>
-		<p>Time: ${this.time}</p>
+		<ul>
+			<li>Grade: ${this.grade}</li>
+			<li>Points: ${this.points}</li>
+			<li>Time: ${this.time}</li>
+		</ul>
+		
 	</div>
 </div>
 `});

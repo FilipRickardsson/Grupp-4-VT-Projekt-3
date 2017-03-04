@@ -72,7 +72,7 @@ class Test extends Base {
 
 		for (var alternative of this.alternativeList) {
 			if (alternative.question_questionId === this.questionList[this.currentQuestion].questionId) {
-				alternative.display('#content');
+				alternative.display('#alternatives');
 			}
 		}
 
