@@ -43,7 +43,6 @@ window.load = `
       correctAnswer-list.class.js
       correctAnswer.class.js
 		statistics.class.js
-		confirm-box.class.js
 		app.class.js
 
 	templates/
@@ -58,7 +57,6 @@ window.load = `
 		user-denied.html
 		user-unknown.html
 		statistics.html
-		confirm-box.html
 		thanks.html
 
 	js/main.js

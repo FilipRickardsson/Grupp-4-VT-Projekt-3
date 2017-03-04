@@ -9,10 +9,6 @@ class Test extends Base {
 		this.questionList = questionList;
 		var alternativeList = new AlternativeList();
 		this.alternativeList = alternativeList;
-		
-		var confirmBox = new ConfirmBox();
-		confirmBox.display("#content");
-		this.confirmBox = confirmBox;
 
 		this.currentQuestion = 0;
 		this.answers = [];
@@ -67,6 +63,7 @@ class Test extends Base {
 
 	showQuestion() {
 		$('#content').empty();
+
 		this.questionList[this.currentQuestion].display('#content');
 
 		for (var alternative of this.alternativeList) {
@@ -115,7 +112,7 @@ class Test extends Base {
 				time = time + '0';
 			}
 			time = time + hours + ':';
-			
+
 			if (minutes < 10) {
 				time = time + '0';
 			}
