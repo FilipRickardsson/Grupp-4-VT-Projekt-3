@@ -4,6 +4,7 @@ class ResultList extends List {
 		super(Result, items);
 	}
 
+	/* Fetches all results for the current user */
 	readAllResult(callback) {
 		this.db.readAllResult((data) => {
 			this.push.apply(this, data);

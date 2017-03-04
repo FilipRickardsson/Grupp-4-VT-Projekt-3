@@ -3,6 +3,7 @@ class App {
 	constructor() {
 		
 		var login = new UserList();
+		/* Checks if the user exist and if the user is a student or a teacher */
 		login.login(() => {
 			if (login.length > 0) {
 				if (login[0].role == 's') {

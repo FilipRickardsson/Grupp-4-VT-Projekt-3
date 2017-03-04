@@ -4,6 +4,7 @@ class UserList extends List {
 		super(User, items);
 	}
 
+	/* Fetches user from the database */
 	login(callback) {
 		this.db.login({
 			userId: user
@@ -13,6 +14,7 @@ class UserList extends List {
 		});
 	}
 
+	/* Fetches all results for current user */
 	checkResult(callback) {
 		this.db.checkResult({
 			user_userId: user
@@ -21,7 +23,6 @@ class UserList extends List {
 			callback();
 		});
 	}
-
 
 	static get sqlQueries() {
 		return {

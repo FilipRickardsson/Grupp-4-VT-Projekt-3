@@ -6,7 +6,9 @@ class Buttons extends Base {
 		$('#btnNext').hide();
 	}
 
-	setVisibility(currentQuestion) {
+	/* Disables previous button when on first question
+	Disables next button when on last question */
+	setDisabled(currentQuestion) {
 		if (currentQuestion == 0) {
 			$('#btnPrev').prop('disabled', true);
 			$('#btnNext').prop('disabled', false);
@@ -19,6 +21,7 @@ class Buttons extends Base {
 		}
 	}
 
+	/* Switches to the next question */
 	next() {
 		if (this.test.currentQuestion + 1 > this.test.questionList.length - 1) {
 			return;
@@ -28,6 +31,7 @@ class Buttons extends Base {
 		this.test.showQuestion();
 	}
 
+	/* Switches to the previous question */
 	prev() {
 		if (this.test.currentQuestion - 1 < 0) {
 			return;
@@ -37,12 +41,14 @@ class Buttons extends Base {
 		this.test.showQuestion();
 	}
 
+	/* Submits the test */
 	submit() {
 		this.collectAnswer();
 		this.test.insertAnswers();
 		this.test.autoCorrect();
 	}
 
+	/* Stores the selected answer */
 	collectAnswer() {
 		var answer = $("input[type=radio][name=radio-button]:checked").val();
 		if (answer !== undefined) {
