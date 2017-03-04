@@ -17,6 +17,7 @@ class Test extends Base {
 		this.answers = [];
 
 		var checkResult = new UserList();
+		checkResult.testId = this.testId;
 		checkResult.checkResult(() => {
 			if (checkResult.length > 0) {
 				var userDenied = new UserDenied();

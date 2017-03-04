@@ -16,9 +16,15 @@ class UserList extends List {
 
 	/* Fetches all results for current user */
 	checkResult(callback) {
-		this.db.checkResult({
-			user_userId: user
-		}, (data) => {
+		this.db.checkResult([user, this.testId], (data) => {
+			this.push.apply(this, data);
+			callback();
+		});
+	}
+
+	/* Fetches all results for current user */
+	checkAllResults(callback) {
+		this.db.checkAllResults([user], (data) => {
 			this.push.apply(this, data);
 			callback();
 		});
@@ -31,7 +37,11 @@ class UserList extends List {
 			`,
 
 			checkResult: `
-        		SELECT * FROM result WHERE ?
+        		SELECT * FROM result WHERE user_userId = ? AND test_testId = ?
+			`,
+
+			checkAllResults: `
+        		SELECT * FROM result WHERE user_userId = ?
 			`
 		}
 	}
