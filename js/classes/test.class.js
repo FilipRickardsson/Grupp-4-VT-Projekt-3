@@ -145,6 +145,7 @@ class Test extends Base {
 
 	/* Inserts the result into the database when submitting */
 	insertResult(grade, points, time, callback) {
+		console.log('testId',this.testId);
 		this.db.insertResult({
 			user_userId: user,
 			test_testId: this.testId,

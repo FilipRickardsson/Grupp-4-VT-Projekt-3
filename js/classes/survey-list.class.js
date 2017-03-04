@@ -6,7 +6,7 @@ class SurveyList extends List {
 
 	/* Fetches user from the database */
 	readAllSurveys(callback) {
-		this.db.readAllSurveys((data) => {
+		this.db.readAllSurveys([user],(data) => {
 			this.push.apply(this, data);
 			callback();
 		});
@@ -15,7 +15,15 @@ class SurveyList extends List {
 	static get sqlQueries() {
 		return {
 			readAllSurveys: `
-        		SELECT * FROM test
+				SELECT * 
+				FROM user
+				JOIN class
+				ON user.class_className = className
+				JOIN class_has_test
+				ON className = class_has_test.class_className
+				JOIN test
+				ON test_testID = testID
+				WHERE userId = ?
 			`
 		}
 	}
