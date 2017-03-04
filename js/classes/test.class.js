@@ -55,7 +55,7 @@ class Test extends Base {
 		self.seconds = 0;
 		self.testTime = setInterval(function () {
 			self.seconds++;
-		}, 100);
+		}, 1000);
 	}
 
 	/* Inserts selected alternatives into the database when submitting */
