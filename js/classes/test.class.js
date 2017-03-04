@@ -2,10 +2,13 @@ class Test extends Base {
 
 	constructor(propertyValues) {
 		super(propertyValues);
+	}
 
+	loadTest() {
 		$("#content").empty();
 
 		var questionList = new QuestionList();
+		questionList.testId = this.testId;
 		this.questionList = questionList;
 		var alternativeList = new AlternativeList();
 		this.alternativeList = alternativeList;
@@ -38,14 +41,16 @@ class Test extends Base {
 				});
 			}
 		});
-
 	}
 
 	/* Inserts dummy data in array containing the users answers */
 	populateAnswers() {
+		var i = 1;
 		for (var question of this.questionList) {
 			question.nbrOfQuestions = this.questionList.length;
+			question.order = i;
 			this.answers.push(-1);
+			i++;
 		}
 	}
 
@@ -142,6 +147,7 @@ class Test extends Base {
 	insertResult(grade, points, time, callback) {
 		this.db.insertResult({
 			user_userId: user,
+			test_testId: this.testId,
 			grade: grade,
 			points: points,
 			time: time

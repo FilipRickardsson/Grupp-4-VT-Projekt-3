@@ -6,8 +6,9 @@ class App {
 		/* Checks if the user exist and if the user is a student or a teacher */
 		login.login(() => {
 			if (login.length > 0) {
-				if (login[0].role == 's') {
-					new Test();
+				if (login[0].role == 'S') {
+					var studentTests = new StudentTestView();
+					studentTests.display('#content');
 				} else {
 					var resultView = new ResultView();
 					resultView.display('#content');

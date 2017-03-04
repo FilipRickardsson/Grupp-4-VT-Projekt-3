@@ -43,6 +43,9 @@ window.load = `
       correctAnswer-list.class.js
       correctAnswer.class.js
 		statistics.class.js
+		student-tests-view.class.js
+		survey.class.js
+		survey-list.class.js
 		app.class.js
 
 	templates/
@@ -59,6 +62,8 @@ window.load = `
 		statistics.html
 		thanks.html
 		result-view.html
+		student-tests-view.html
+		survey.html
 
 	js/main.js
 
