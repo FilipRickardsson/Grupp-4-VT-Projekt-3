@@ -98,38 +98,43 @@ class Test extends Base {
 			} else {
 				grade = 'VG';
 			}
-
-			clearInterval(this.set);
-			var hours = Math.floor(this.seconds / 3600);
-			this.seconds %= 3600;
-			var minutes = Math.floor(this.seconds / 60);
-			var seconds = this.seconds % 60;
-
-			var time = '';
-
-			if (hours < 10) {
-				time = time + '0';
-			}
-			time = time + hours + ':';
-
-			if (minutes < 10) {
-				time = time + '0';
-			}
-			time = time + minutes + ':';
-
-			if (seconds < 10) {
-				time = time + '0';
-			}
-			time = time + seconds;
-
-			this.insertGrade(grade, points.length, time);
-
+			
+			var time = this.calcTime();
+			this.insertResult(grade, points.length, time);
 			this.showThanks(grade, points.length, time);
 		});
 	}
 
-	insertGrade(grade, points, time, callback) {
-		this.db.insertGrade({
+	/* Convert and returns seconds to hours, minutes and seconds
+	in a formatted way */
+	calcTime() {
+		clearInterval(this.set);
+		var hours = Math.floor(this.seconds / 3600);
+		this.seconds %= 3600;
+		var minutes = Math.floor(this.seconds / 60);
+		var seconds = this.seconds % 60;
+
+		var time = '';
+		if (hours < 10) {
+			time = time + '0';
+		}
+		time = time + hours + ':';
+
+		if (minutes < 10) {
+			time = time + '0';
+		}
+		time = time + minutes + ':';
+
+		if (seconds < 10) {
+			time = time + '0';
+		}
+		time = time + seconds;
+		return time;
+	}
+
+
+	insertResult(grade, points, time, callback) {
+		this.db.insertResult({
 			user_userId: user,
 			grade: grade,
 			points: points,
@@ -159,7 +164,7 @@ class Test extends Base {
 			insertAnswer: `
     			INSERT user_answers_alternative SET ?
      		`,
-			insertGrade: `
+			insertResult: `
     			INSERT result SET ?
      		`
 		}
