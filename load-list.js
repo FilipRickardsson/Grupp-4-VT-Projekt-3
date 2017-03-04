@@ -46,6 +46,7 @@ window.load = `
 		student-tests-view.class.js
 		survey.class.js
 		survey-list.class.js
+		teacher-tests-view.class.js
 		app.class.js
 
 	templates/
@@ -64,6 +65,7 @@ window.load = `
 		result-view.html
 		student-tests-view.html
 		survey.html
+		teacher-tests-view.html
 
 	js/main.js
 

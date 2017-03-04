@@ -6,7 +6,7 @@ class ResultList extends List {
 
 	/* Fetches all results for the current user */
 	readAllResult(callback) {
-		this.db.readAllResult((data) => {
+		this.db.readAllResult([this.testId], (data) => {
 			this.push.apply(this, data);
 			callback();
 		});
@@ -15,7 +15,11 @@ class ResultList extends List {
 	static get sqlQueries() {
 		return {
 			readAllResult: `
-				SELECT * FROM result JOIN user ON user_userId = userId
+				SELECT * 
+				FROM result 
+				JOIN user 
+				ON user_userId = userId
+				WHERE test_testId = ?
       	`
 		}
 	}
