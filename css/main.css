@@ -9,12 +9,30 @@ h1 {
 	margin-top: 0;
 }
 
+h3 {
+	text-decoration: underline;
+}
+
+ul {
+	padding-left: 0;
+}
+
+p {
+	font-size: 18px;
+}
+
+li {
+	list-style-type: none;
+	font-size: 18px;
+}
+
 .navbar {
 	border-radius: 0;
 }
 
 .btn {
 	background-color: #e95420;
+	font-size: 16px;
 }
 
 .btn:hover {
@@ -27,12 +45,19 @@ h1 {
 
 label {
 	font-weight: normal;
+	font-size: 18px;
 }
 
 #content {
 	min-width: 300px;
 	margin: 0 auto;
 }
+
+input[type=radio] {
+	height: 15px;
+	width: 15px;
+}
+
 
 /* Sticky footer */
 
@@ -70,6 +95,7 @@ footer .footerText {
 .message p {
 	font-size: 20px;
 }
+
 
 /* Change font size in mobile */
 

@@ -58,6 +58,7 @@ window.load = `
 		user-unknown.html
 		statistics.html
 		thanks.html
+		result-view.html
 
 	js/main.js
 

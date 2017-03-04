@@ -1,5 +1,10 @@
 Result.addTemplate('default', function(){return `
 <div>
-	<h1>ID: ${this.user_userId}, Grade: ${this.grade}, Time: ${this.time}</h1>
+	<ul>
+		<li>Name: ${this.firstname} ${this.surname}</li>
+		<li>Grade: ${this.grade}</li>
+		<li>Points: ${this.points}</li>
+		<li>Time: ${this.time}</li>
+	</ul>
 </div>
 `});

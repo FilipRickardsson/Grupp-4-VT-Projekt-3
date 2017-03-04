@@ -8,7 +8,8 @@ class App {
 				if (login[0].role == 's') {
 					new Test();
 				} else {
-					new ResultView();
+					var resultView = new ResultView();
+					resultView.display('#content');
 				}
 			} else {
 				var userUnknown = new UserUnknown();
