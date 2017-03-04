@@ -23,8 +23,7 @@ class Buttons extends Base {
 		if (this.test.currentQuestion + 1 > this.test.questionList.length - 1) {
 			return;
 		}
-		var answer = $("input[type=radio][name=radio-button]:checked").val();
-		this.test.answers[this.test.currentQuestion] = answer;
+		this.collectAnswer();
 		this.test.currentQuestion++;
 		this.test.showQuestion();
 	}
@@ -40,9 +39,8 @@ class Buttons extends Base {
 	}
 
 	submit() {
-		var answer = $("input[type=radio][name=radio-button]:checked").val();
-		this.test.answers[this.test.currentQuestion] = answer;
-
+		this.collectAnswer();
+		
 		this.test.insertAnswers();
 
 		var thanks = new Thanks();
@@ -50,7 +48,11 @@ class Buttons extends Base {
 		thanks.display('#content');
 
 		var result = this.test.autoCorrect();
-		console.log('result', result);
 	}
-	
+
+	collectAnswer() {
+		var answer = $("input[type=radio][name=radio-button]:checked").val();
+		this.test.answers[this.test.currentQuestion] = answer;
+	}
+
 }
