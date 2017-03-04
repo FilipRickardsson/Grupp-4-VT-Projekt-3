@@ -32,8 +32,7 @@ class Buttons extends Base {
 		if (this.test.currentQuestion - 1 < 0) {
 			return;
 		}
-		var answer = $("input[type=radio][name=radio-button]:checked").val();
-		this.test.answers[this.test.currentQuestion] = answer;
+		this.collectAnswer();
 		this.test.currentQuestion--;
 		this.test.showQuestion();
 	}
@@ -46,7 +45,10 @@ class Buttons extends Base {
 
 	collectAnswer() {
 		var answer = $("input[type=radio][name=radio-button]:checked").val();
-		this.test.answers[this.test.currentQuestion] = answer;
+		if (answer !== undefined) {
+			this.test.answers[this.test.currentQuestion] = answer;
+		}
+		console.log(this.test.answers);
 	}
 
 }

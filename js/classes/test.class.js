@@ -67,9 +67,7 @@ class Test extends Base {
 
 	showQuestion() {
 		$('#content').empty();
-
 		this.questionList[this.currentQuestion].display('#content');
-
 		for (var alternative of this.alternativeList) {
 			if (alternative.question_questionId === this.questionList[this.currentQuestion].questionId) {
 				alternative.display('#alternatives');
@@ -83,7 +81,6 @@ class Test extends Base {
 		$(() => {
 			buttons.setVisibility(this.currentQuestion);
 		});
-
 	}
 
 	autoCorrect() {
