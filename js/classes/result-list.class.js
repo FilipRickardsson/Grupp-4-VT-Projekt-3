@@ -14,7 +14,7 @@ class ResultList extends List {
 	static get sqlQueries() {
 		return {
 			readAllResult: `
-				SELECT * FROM result
+				SELECT * FROM result JOIN user ON user_userId = userId
       	`
 		}
 	}

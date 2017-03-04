@@ -7,32 +7,36 @@ class ResultView extends Base {
 		var resultList = new ResultList();
 
 		resultList.readAllResult(() => {
-			resultList.display('#content');
+			if (resultList.length > 0) {
+				var ig = 0;
+				var g = 0;
+				var vg = 0;
+				var sum = 0;
 
-			var ig = 0;
-			var g = 0;
-			var vg = 0;
-			var sum = 0;
-
-			for (var result of resultList) {
-				if (result.grade == 'ig') {
-					ig++;
-				} else if (result.grade == 'g') {
-					g++;
-				} else {
-					vg++;
+				for (var result of resultList) {
+					if (result.grade == 'IG') {
+						ig++;
+					} else if (result.grade == 'G') {
+						g++;
+					} else {
+						vg++;
+					}
+					sum += result.points;
 				}
-				sum += result.points;
-			}
 
-			var avg = sum / resultList.length;
-			
-			var statistics = new Statistics();
-			statistics.ig = ig;
-			statistics.g = g;
-			statistics.vg = vg;
-			statistics.avg = avg;
-			statistics.display('#content');
+				var avg = sum / resultList.length;
+
+				var statistics = new Statistics();
+				statistics.ig = ig;
+				statistics.g = g;
+				statistics.vg = vg;
+				statistics.avg = avg;
+
+				resultList.display('#content');
+				statistics.display('#content');
+			} else {
+				$('#content').append('<p>No results available.</p>');
+			}
 		});
 
 	}
