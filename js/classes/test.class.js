@@ -41,6 +41,7 @@ class Test extends Base {
 
 	}
 
+	/* Inserts dummy data in array containing the users answers */
 	populateAnswers() {
 		for (var question of this.questionList) {
 			question.nbrOfQuestions = this.questionList.length;
@@ -48,14 +49,16 @@ class Test extends Base {
 		}
 	}
 
+	/* Starts the timer which keeps track how long the test took */
 	startTimer() {
 		var self = this;
 		self.seconds = 0;
-		self.set = setInterval(function () {
+		self.testTime = setInterval(function () {
 			self.seconds++;
 		}, 100);
 	}
 
+	/* Inserts selected alternatives into the database when submitting */
 	insertAnswers(callback) {
 		for (let i = 0; i < this.answers.length; i++) {
 			this.db.insertAnswer({
@@ -65,6 +68,7 @@ class Test extends Base {
 		}
 	}
 
+	/* Shows a specific question,its alternatives and buttons */
 	showQuestion() {
 		$('#content').empty();
 		this.questionList[this.currentQuestion].display('#content');
@@ -79,10 +83,12 @@ class Test extends Base {
 		buttons.test = this;
 		buttons.display('#content');
 		$(() => {
-			buttons.setVisibility(this.currentQuestion);
+			buttons.setDisabled(this.currentQuestion);
 		});
 	}
 
+	/* Automatically calculated number of correct answers,
+	calculated a grade and inserts the result into the database */
 	autoCorrect() {
 		var points = new CorrectAnswerList();
 
@@ -98,7 +104,7 @@ class Test extends Base {
 			} else {
 				grade = 'VG';
 			}
-			
+
 			var time = this.calcTime();
 			this.insertResult(grade, points.length, time);
 			this.showThanks(grade, points.length, time);
@@ -108,7 +114,7 @@ class Test extends Base {
 	/* Convert and returns seconds to hours, minutes and seconds
 	in a formatted way */
 	calcTime() {
-		clearInterval(this.set);
+		clearInterval(this.testTime);
 		var hours = Math.floor(this.seconds / 3600);
 		this.seconds %= 3600;
 		var minutes = Math.floor(this.seconds / 60);
@@ -132,7 +138,7 @@ class Test extends Base {
 		return time;
 	}
 
-
+	/* Inserts the result into the database when submitting */
 	insertResult(grade, points, time, callback) {
 		this.db.insertResult({
 			user_userId: user,
@@ -142,6 +148,8 @@ class Test extends Base {
 		}, callback);
 	}
 
+	/* Shows a confirmation when submitting, with or without result
+	based on the global showResult variable */
 	showThanks(grade, points, time) {
 		var thanks = new Thanks();
 		if (showResult) {

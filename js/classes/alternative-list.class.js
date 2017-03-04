@@ -4,6 +4,7 @@ class AlternativeList extends List {
 		super(Alternative, items);
 	}
 
+	/* Fetches all alternatives from the database */
 	readAllAlternatives(callback) {
 		this.db.readAllAlternatives((data) => {
 			this.push.apply(this, data);

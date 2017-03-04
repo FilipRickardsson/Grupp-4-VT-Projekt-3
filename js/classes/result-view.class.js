@@ -6,6 +6,7 @@ class ResultView extends Base {
 
 		var resultList = new ResultList();
 
+		/* Fetches all results and presents statistics */
 		resultList.readAllResult(() => {
 			if (resultList.length > 0) {
 				var ig = 0;

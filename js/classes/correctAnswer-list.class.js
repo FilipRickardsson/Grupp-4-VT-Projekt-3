@@ -4,6 +4,7 @@ class CorrectAnswerList extends List {
 		super(CorrectAnswer, items);
 	}
 
+	/* Fetches the correct answers by the current user */
 	readCorrectAnswers(callback) {
 		this.db.autoCorrect([user], (data) => {
 			this.push.apply(this, data);
