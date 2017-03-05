@@ -4,7 +4,7 @@ class QuestionList extends List {
 		super(Question, items);
 	}
 
-	/* Fetches all the questions from the database */
+	/* Fetches all the questions for a test from the database */
 	readAllQuestions(callback) {
 		this.db.readAllQuestions([this.testId], (data) => {
 			this.push.apply(this, data);

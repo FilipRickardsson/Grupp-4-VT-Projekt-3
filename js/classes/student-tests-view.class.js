@@ -3,29 +3,29 @@ class StudentTestView extends Base {
 	constructor(propertyValues = {}) {
 		super(propertyValues);
 
-		var surveyList = new SurveyList();
+		var testList = new TestList();
 		var submittedList = new UserList();
 
-		surveyList.readAvailableSurveys(() => {
+		testList.readAvailableTests(() => {
 			submittedList.checkAllResults(() => {
 				var available = [];
-				var submitted = []
+				var submitted = [];
 
-				surveyList.forEach(function (survey) {
+				testList.forEach(function (test) {
 					var found = false;
 
 					submittedList.forEach(function (submitted) {
-						if (survey.testId === submitted.test_testId) {
+						if (test.testId === submitted.test_testId) {
 							found = true;
 						}
 
 					});
 
 					if (found) {
-						submitted.push(survey);
+						submitted.push(test);
 
 					} else {
-						available.push(survey);
+						available.push(test);
 
 					}
 
