@@ -7,7 +7,7 @@ Statistics.addTemplate('default', function(){return `
 		<li>IG: ${this.ig}</li>
 		<li>G: ${this.g}</li>
 		<li>VG: ${this.vg}</li>
-		<li>Average: ${this.avg}</li>
+		<li>Average: ${Math.round(this.avg * 100) / 100}</li>
 	</ul>
 </div>
 `});
