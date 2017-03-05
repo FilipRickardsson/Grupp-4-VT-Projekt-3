@@ -54,7 +54,6 @@ class Buttons extends Base {
 		if (answer !== undefined) {
 			this.test.answers[this.test.currentQuestion] = answer;
 		}
-		console.log(this.test.answers);
 	}
 
 }

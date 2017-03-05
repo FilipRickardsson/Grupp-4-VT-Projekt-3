@@ -8,7 +8,6 @@ class ResultView extends Base {
 	loadResult() {
 		var resultList = new ResultList();
 		resultList.testId = this.testId;
-		console.log('wut?', this.testId);
 
 		/* Fetches all results and presents statistics */
 		resultList.readAllResult(() => {

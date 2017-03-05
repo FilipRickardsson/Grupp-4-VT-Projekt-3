@@ -8,12 +8,12 @@ class Survey extends Base {
 		if (student) {
 			var test = new Test();
 			test.testId = this.testId;
+			test.showResult = this.showResult;
 			test.loadTest();
 		} else {
 			var result = new ResultView();
 			result.testId = this.testId;
 			result.loadResult();
-			console.log('crap', this.testId);
 			result.display('#content');
 		}
 	}

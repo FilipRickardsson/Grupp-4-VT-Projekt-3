@@ -6,7 +6,7 @@ class AlternativeList extends List {
 
 	/* Fetches all alternatives from the database */
 	readAllAlternatives(callback) {
-		this.db.readAllAlternatives((data) => {
+		this.db.readAllAlternatives([this.testId], (data) => {
 			this.push.apply(this, data);
 			callback();
 		});
@@ -15,11 +15,14 @@ class AlternativeList extends List {
 	static get sqlQueries() {
 		return {
 			readAllAlternatives: `
-			SELECT alternative_alternativeId, question_has_alternative.question_questionId, text, correct
-			FROM alternative
-			JOIN question_has_alternative
-			ON alternativeId = alternative_alternativeId
-      `
+				SELECT *
+				FROM alternative
+				JOIN question_has_alternative
+				ON alternativeId = alternative_alternativeId
+				JOIN test_has_question
+				ON question_has_alternative.question_questionId = test_has_question.question_questionId
+				WHERE test_testId = ?
+			`
 		}
 	}
 

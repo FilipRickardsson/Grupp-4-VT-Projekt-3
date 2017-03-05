@@ -11,14 +11,10 @@ class StudentTestView extends Base {
 				var available = [];
 				var submitted = []
 
-				console.log(surveyList);
-				console.log(submittedList);
-
 				surveyList.forEach(function (survey) {
 					var found = false;
 
 					submittedList.forEach(function (submitted) {
-						console.log(survey.testId, ' ', submitted.test_testId);
 						if (survey.testId === submitted.test_testId) {
 							found = true;
 						}

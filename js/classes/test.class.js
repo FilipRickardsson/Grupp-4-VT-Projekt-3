@@ -11,6 +11,7 @@ class Test extends Base {
 		questionList.testId = this.testId;
 		this.questionList = questionList;
 		var alternativeList = new AlternativeList();
+		alternativeList.testId = this.testId;
 		this.alternativeList = alternativeList;
 
 		this.currentQuestion = 0;
@@ -21,7 +22,7 @@ class Test extends Base {
 		checkResult.checkResult(() => {
 			if (checkResult.length > 0) {
 				var userDenied = new UserDenied();
-				if (showResult) {
+				if (this.showResult) {
 					userDenied.grade = checkResult[0].grade;
 					userDenied.points = checkResult[0].points;
 					userDenied.time = checkResult[0].time;
@@ -146,7 +147,6 @@ class Test extends Base {
 
 	/* Inserts the result into the database when submitting */
 	insertResult(grade, points, time, callback) {
-		console.log('testId',this.testId);
 		this.db.insertResult({
 			user_userId: user,
 			test_testId: this.testId,
@@ -160,7 +160,7 @@ class Test extends Base {
 	based on the global showResult variable */
 	showThanks(grade, points, time) {
 		var thanks = new Thanks();
-		if (showResult) {
+		if (this.showResult) {
 			thanks.grade = grade;
 			thanks.points = points;
 			thanks.time = time;
@@ -170,7 +170,7 @@ class Test extends Base {
 		$('#content').empty();
 		thanks.display('#content');
 
-		if (!showResult) {
+		if (!this.showResult) {
 			$('#result').hide();
 		}
 	}
