@@ -1,12 +1,12 @@
-class SurveyList extends List {
+class TestList extends List {
 
 	constructor(items) {
-		super(Survey, items);
+		super(Test, items);
 	}
 
 	/* Fetches user from the database */
-	readAvailableSurveys(callback) {
-		this.db.readAvailableSurveys([user], (data) => {
+	readAvailableTests(callback) {
+		this.db.readAvailableTests([user], (data) => {
 			this.push.apply(this, data);
 			callback();
 		});
@@ -14,7 +14,7 @@ class SurveyList extends List {
 
 	static get sqlQueries() {
 		return {
-			readAvailableSurveys: `
+			readAvailableTests: `
 				SELECT * 
 				FROM user
 				JOIN class

@@ -33,7 +33,7 @@ window.load = `
 		header.class.js
 		content.class.js
 		footer.class.js
-		test.class.js
+		test-view.class.js
 		result-view.class.js
 		user.class.js
 		user-list.class.js
@@ -44,8 +44,8 @@ window.load = `
       correctAnswer.class.js
 		statistics.class.js
 		student-tests-view.class.js
-		survey.class.js
-		survey-list.class.js
+		test.class.js
+		test-list.class.js
 		teacher-tests-view.class.js
 		app.class.js
 
@@ -64,7 +64,7 @@ window.load = `
 		thanks.html
 		result-view.html
 		student-tests-view.html
-		survey.html
+		test.html
 		teacher-tests-view.html
 
 	js/main.js

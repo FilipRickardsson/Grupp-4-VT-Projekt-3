@@ -3,10 +3,10 @@ class TeacherTestView extends Base {
 	constructor(propertyValues = {}) {
 		super(propertyValues);
 
-		var surveyList = new SurveyList();
+		var testList = new TestList();
 		
-		surveyList.readAvailableSurveys(() => {
-			surveyList.display('#availableTestList');
+		testList.readAvailableTests(() => {
+			testList.display('#availableTestList');
 		});
 	}
 
