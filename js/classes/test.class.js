@@ -4,6 +4,7 @@ class Test extends Base {
 		super(propertyValues);
 	}
 
+	/* Views a list with available tests */
 	selectTest() {
 		if (student) {
 			var testView = new TestView();

@@ -32,8 +32,6 @@ class StudentTestView extends Base {
 
 				});
 				
-				console.log('debug 1', available, submitted);
-				
 				if (available.length == 0) {
 					$('#availableTestList').append('<li>None</li>');
 				}

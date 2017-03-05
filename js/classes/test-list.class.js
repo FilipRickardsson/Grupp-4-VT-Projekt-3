@@ -4,7 +4,7 @@ class TestList extends List {
 		super(Test, items);
 	}
 
-	/* Fetches user from the database */
+	/* Fetches < user from the database */
 	readAvailableTests(callback) {
 		this.db.readAvailableTests([user], (data) => {
 			this.push.apply(this, data);
@@ -17,10 +17,8 @@ class TestList extends List {
 			readAvailableTests: `
 				SELECT * 
 				FROM user
-				JOIN class
-				ON user.class_className = className
 				JOIN class_has_test
-				ON className = class_has_test.class_className
+				ON user.class_className = class_has_test.class_className
 				JOIN test
 				ON test_testID = testID
 				WHERE userId = ?
