@@ -1,12 +1,21 @@
 /* Settings */
 
 /* Users */
-var user = 'bob@student.com';
-//var user = 'jane@student.com';
-//var user = 'john@teacher.com';
 
-/* Set if show result immediately to the student */
-var showResult = true;
+/* Class 1 */
+//var user = 'david@student.com';
+//var user = 'leo@student.com';
+
+/* Class 2 */
+var user = 'filip@student.com';
+//var user = 'tobias@student.com';
+//var user = 'fatemeh@student.com';
+
+/* Teachers */
+//var user = 'john@teacher.com'	;	// Class 1
+//var user = 'jane@teacher.com'; // Class 2
+
+var student;
 
 $(() => {
 	new App()

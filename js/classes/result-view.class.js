@@ -3,8 +3,11 @@ class ResultView extends Base {
 	constructor(propertyValues) {
 		super(propertyValues);
 		$("#content").empty();
+	}
 
+	loadResult() {
 		var resultList = new ResultList();
+		resultList.testId = this.testId;
 
 		/* Fetches all results and presents statistics */
 		resultList.readAllResult(() => {
@@ -39,7 +42,6 @@ class ResultView extends Base {
 				$('#content').append('<p>No results available.</p>');
 			}
 		});
-
 	}
 
 }

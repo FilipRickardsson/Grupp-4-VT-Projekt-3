@@ -4,9 +4,9 @@ class QuestionList extends List {
 		super(Question, items);
 	}
 
-	/* Fetches all the questions from the database */
+	/* Fetches all the questions for a test from the database */
 	readAllQuestions(callback) {
-		this.db.readAllQuestions((data) => {
+		this.db.readAllQuestions([this.testId], (data) => {
 			this.push.apply(this, data);
 			callback();
 		});
@@ -15,8 +15,11 @@ class QuestionList extends List {
 	static get sqlQueries() {
 		return {
 			readAllQuestions: `
-        SELECT questionId, text FROM question
-      `
+				SELECT questionId, text
+				FROM question
+				JOIN test_has_question
+				WHERE questionId = question_questionId AND test_testId = ?
+      	`
 		}
 	}
 
