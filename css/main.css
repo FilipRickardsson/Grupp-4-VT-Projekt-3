@@ -40,7 +40,6 @@ li {
 
 label {
 	font-weight: normal;
-	font-size: 18px;
 }
 
 #content {
@@ -52,6 +51,7 @@ input[type=radio] {
 	height: 15px;
 	width: 15px;
 }
+
 
 /* Sticky footer */
 
@@ -94,16 +94,18 @@ footer .footerText {
 	font-size: 20px;
 }
 
+
 /* Change font size in mobile */
 
 @media (max-width: 376px) {
 	#content p {
-		font-size: 20px;
+		font-size: 24px;
 	}
-	label {
-		font-size: 20px;
+	li {
+		font-size: 24px;
 	}
 	.btn {
-		font-size: 18px;
+		font-size: 20px;
 	}
+	
 }
