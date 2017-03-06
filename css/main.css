@@ -52,6 +52,10 @@ input[type=radio] {
 	width: 15px;
 }
 
+.logo {
+	width: 100px;
+	height: 50px;
+}
 
 /* Sticky footer */
 
